@@ -1,7 +1,17 @@
 {{ partial "header.html" . }}
         <main>
+          <h2 class="title"><strong><a href="/blog">Recent posts</a></strong></h2>
+          <ul class="blog-list" itemscope itemtype="http://schema.org/Blog">
+{{ range first 3 .Data.Pages }}
+            <li>
+                <span class="date"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time></span>
+                <span class="title" itemprop="headline"><a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</a></span>
+            </li>
+{{- end }}
+          </ul>
+          <hr />
 {{ range first 1 .Data.Pages }}
-{{- partial "article.html" . -}}
+{{- partial "summary.html" . -}}
 {{- end }}
         </main>
 {{ partial "footer.html" . }}

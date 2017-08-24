@@ -1,17 +1,14 @@
-        <article class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2 class="title" itemprop="headline">
-              <strong><a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</a></strong>
-            </h2>
-            <p class="date">
-                <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, 2 January, 2006" }}</time>
-            </p>
-            <p class="content" itemprop="articleBody">
-                {{ .Summary -}}
-                {{ if .Truncated }}...{{ end }}
-            </p>
-            <p>
-                {{ if .Truncated }}<a class="expand" href="{{ .RelPermalink }}">more</a>
-                {{ else }}<a class="expand" href="{{ .RelPermalink }}">comments</a>
-                {{ end }}
-            </p>
+        <article class="blog-post" itemid="{{ .Permalink }}" itemscope itemtype="http://schema.org/BlogPosting">
+          <h2 class="title" itemprop="headline">
+            <strong><a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</a></strong>
+          </h2>
+          <p class="date" itemprop="about">
+            <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, 2 January, 2006" }}</time>
+          </p>
+          <div class="content" itemprop="articleBody">
+{{ .Content }}
+          </div>
+          <p>
+             <a class="expand" href="{{ .RelPermalink }}">comments</a>
+          </p>
         </article>

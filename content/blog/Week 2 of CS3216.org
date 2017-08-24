@@ -15,6 +15,8 @@ At the presentation, I bumped into another pair from this year's intake. One of 
 
 I really enjoyed this week's lecture, which taught us important software engineering principles, such as testing and code style. These principles are analogous to keeping your workspace tidy, which allows you to jump right into code that you haven't touched for a while and quickly familiarise yourself with it.
 
-For assignment 1, our team is using JavaScript for both the front end and back end. We use [[https://eslint.org/][ESLint]] with the [[https://standardjs.com/][JavaScript Standard Style]], along with the [[https://github.com/prettier/prettier-eslint][Prettier]] plugin, which allows us to run =eslint --fix= to automatically format our code according to the specified rules. This allows us to focus on the actual product instead of inconsequential details such as indentation style and semicolons.
+I found that enforcing a strict set of rules is helpful in maintaining a consistent code base, which is something I had not fully appreciated in solo projects.
 
+For assignment 1, our team is using JavaScript for both the front end and back end. We use [[https://eslint.org/][ESLint]] with the [[https://standardjs.com/][JavaScript Standard Style]], along with the [[https://github.com/prettier/prettier-eslint][Prettier]] plugin, which allows us to run =eslint --fix= to automatically format our code according to the specified rules. This allows us to focus on the actual product instead of inconsequential details such as indentation style and semicolons.
+ 
 Two weeks down, eleven (?) more to go.

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nus on Goh Wei Wen</title>
+    <link>https://goweiwen.github.io/tags/nus/</link>
+    <description>Recent content in Nus on Goh Wei Wen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Aug 2017 22:17:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://goweiwen.github.io/tags/nus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Week 1 Of CS3216</title>
+      <link>https://goweiwen.github.io/blog/week-1-of-cs3216/</link>
+      <pubDate>Wed, 23 Aug 2017 22:17:31 +0800</pubDate>
+      
+      <guid>https://goweiwen.github.io/blog/week-1-of-cs3216/</guid>
+      <description>Dr. Colin started our first lecture flying a drone in class. I guess that&#39;s one way to tell students that CS3216 isn&#39;t your normal module.
+Coming in as a year 2 student, I didn&#39;t expect to see anyone I recognize in class. When I stepped into the room, however, I was greeted by Kush, my block mate from Raffles Hall. Seeing a familiar face definitely eased my first day of class anxiety.</description>
+    </item>
+    
+    <item>
+      <title>What I hope to learn in CS3216</title>
+      <link>https://goweiwen.github.io/blog/what-i-hope-to-learn-in-cs2316/</link>
+      <pubDate>Sat, 12 Aug 2017 22:42:07 +0800</pubDate>
+      
+      <guid>https://goweiwen.github.io/blog/what-i-hope-to-learn-in-cs2316/</guid>
+      <description>&lt;p&gt;CS3216 is famed for enrolling motivated and hardworking students. I believe that by being surrounded by such passionate people, I will be able to push past my comfort zone and improve myself beyond my own limits.&lt;/p&gt;
+
+&lt;p&gt;Here are a few things I hope to learn in this module:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

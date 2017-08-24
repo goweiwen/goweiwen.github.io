@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ .Title }}</title>
+    {{- with .Site.Params.description }}
+    <meta name="description" content="{{ . }}">{{ end }}
+    {{- with .Site.Params.author }}
+    <meta name="author" content="{{ . }}">{{ end }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/normalize.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/skeleton.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    {{- if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
+    {{ .Hugo.Generator }}
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="container">
+        <ul class="navigation">{{ range .Site.Menus.main }}
+          <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>{{ end }}
+        </ul>
+        <ul class="contact">
+          {{- with .Site.Params.github }}
+          <li><a href="{{ . }}" target="_blank"><img src="/images/icon-github.svg" alt="GitHub" title="GitHub"></a></li>{{ end }}
+          {{- with .Site.Params.linkedin }}
+          <li><a href="{{ . }}" target="_blank"><img src="/images/icon-linkedin.svg" alt="LinkedIn" title="LinkedIn"></a></li>{{ end }}
+          {{- with .Site.Params.email }}
+          <li><a href="mailto:{{ . }}" target="_blank"><img src="/images/icon-email.svg" alt="Email" title="Email"></a></li>{{ end }}
+        </ul>
+      </nav>
+    </header>
+    <div class="main container">
+      <a class="logo" href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" width="400px" height="150px">
+      </a>

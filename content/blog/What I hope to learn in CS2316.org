@@ -1,0 +1,24 @@
+---
+title: "What I hope to learn in CS3216"
+date: 2017-08-12T22:42:07+08:00
+tags:
+  - CS3216
+  - NUS
+---
+
+CS3216 is famed for enrolling motivated and hardworking students. I believe that by being surrounded by such passionate people, I will be able to push past my comfort zone and improve myself beyond my own limits.
+
+Here are a few things I hope to learn in this module:
+
+# more
+
+* How to Learn
+  Technology moves fast. In an world where a new JavaScript frameworks pop up every month, learning how to learn is the most essential skill for any developer.
+
+* Finishing Projects
+  As the adage goes, “the last mile is the hardest”. I usually start my projects on fire, but the flame soon withers out and procrastination takes over. The rigid deadlines set in this module will help me prioritise my work and get me used to completing what I started.
+
+* Working in a team
+  I work on most of my projects either alone or in a team of developers. CS3216 is an excellent opportunity for me to work with a diverse group of talented peers with a variety of skills.
+
+I can’t wait for our first lesson on Monday.

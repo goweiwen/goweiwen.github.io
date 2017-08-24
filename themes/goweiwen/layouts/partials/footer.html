@@ -1,0 +1,15 @@
+    </div>
+
+    <footer class="footer">
+      <ul class="contact">
+        {{- with .Site.Params.github }}
+        <li><a href="{{ . }}" target="_blank"><img src="/images/icon-github.svg" alt="GitHub" title="GitHub"></a></li>{{ end }}
+        {{- with .Site.Params.linkedin }}
+        <li><a href="{{ . }}" target="_blank"><img src="/images/icon-linkedin.svg" alt="LinkedIn" title="LinkedIn"></a></li>{{ end }}
+        {{- with .Site.Params.email }}
+        <li><a href="mailto:{{ . }}" target="_blank"><img src="/images/icon-email.svg" alt="Email" title="Email"></a></li>{{ end }}
+      </ul>
+    </footer>
+    {{ template "_internal/google_analytics.html" . }}
+  </body>
+</html>

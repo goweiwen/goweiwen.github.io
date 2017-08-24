@@ -1,0 +1,19 @@
+---
+title: "Week 1 Of CS3216"
+date: 2017-08-23T22:17:31+08:00
+tags:
+- CS3216
+- NUS
+---
+
+Dr. Colin started our first lecture flying a drone in class. I guess that's one way to tell students that CS3216 isn't your normal module.
+
+Coming in as a year 2 student, I didn't expect to see anyone I recognize in class. When I stepped into the room, however, I was greeted by [[https://kush3216.blogspot.sg/][Kush]], my block mate from Raffles Hall. Seeing a familiar face definitely eased my first day of class anxiety.
+
+The superhero activity where we had to find people with different talents to fill up our contact sheet was fun. It helped me get to know a large portion of the class and their skill sets.
+
+Assignment 1 is going smoothly. Our team met up on Thursday to discuss, and everyone came fully prepared. We decided on a product and most of the implementation details without much difficulty.
+
+At a JavaScript meet up I attended recently, I was fortunate enough to bump into a few CS3216 alumni, who gave me some advice on CS3216, and stories about the experiences they had there. They also jested (perhaps in an earnest concern) that this would be the last meet up I'll be attending for a while.
+
+So far, I think taking on CS3216 was a right decision for me.

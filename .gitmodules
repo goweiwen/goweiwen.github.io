@@ -1,0 +1,3 @@
+[submodule "themes/goweiwen"]
+	path = themes/goweiwen
+	url = https://github.com/vimux/blank/

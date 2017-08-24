@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+      <main role="main">
+        <ul class="blog-list" itemscope itemtype="http://schema.org/Blog">
+          {{ range .Data.Pages }}
+          <li>
+            <span class="date"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time></span>
+            <span class="title" itemprop="headline"><a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</a></span>
+          </li>
+          {{ end }}
+        </ul>
+      </main>
+{{ partial "footer.html" . }}

@@ -1,0 +1,33 @@
+baseURL = "https://goweiwen.github.io/"
+languageCode = "en"
+title = "Goh Wei Wen"
+author = "Goh Wei Wen"
+theme = "goweiwen"
+googleAnalytics = "UA-92938412-1"
+disqusShortname = "goweiwen"
+
+[params]
+  logo= "/images/logo.svg"
+  github = "https://github.com/goweiwen"
+  linkedin = "https://www.linkedin.com/in/goweiwen"
+  email = "goweiwen@gmail.com"
+
+[[menu.main]]
+  name = "Home"
+  weight = 1
+  url = ""
+
+[[menu.main]]
+  name = "blog"
+  weight = 2
+  url = "blog/"
+
+# [[menu.main]]
+#   name = "About"
+#   weight = 3
+#   url = "about/"
+
+[[menu.main]]
+  name = "Résumé"
+  weight = 4
+  url = "cv/"

@@ -1,0 +1,7 @@
+{{ partial "header.html" . }}
+        <main>
+{{ range first 1 .Data.Pages }}
+{{- partial "article.html" . -}}
+{{- end }}
+        </main>
+{{ partial "footer.html" . }}

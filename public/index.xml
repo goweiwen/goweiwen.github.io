@@ -6,10 +6,21 @@
     <description>Recent content on Goh Wei Wen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Aug 2017 22:17:31 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Aug 2017 23:02:11 +0800</lastBuildDate>
     
 	<atom:link href="https://goweiwen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 2 Of CS3216</title>
+      <link>https://goweiwen.github.io/blog/week-2-of-cs3216/</link>
+      <pubDate>Thu, 24 Aug 2017 23:02:11 +0800</pubDate>
+      
+      <guid>https://goweiwen.github.io/blog/week-2-of-cs3216/</guid>
+      <description>Week 2 ends with two deliverables due on the midnight of Friday.
+My team&#39;s Orbital presentation happened earlier this week. One of the advisors for the Orbital project took CS3216 during his second year. He mentioned that in retrospect, taking it in year three, after CS3217, would be a better choice. That scared me, but I&#39;m confident I&#39;ll be able to overcome any obstacles CS3216 throws.
+At the Orbital presentation, I bumped into another pair from this year&#39;s intake, who told me that they had dropped this module.</description>
+    </item>
     
     <item>
       <title>Week 1 Of CS3216</title>

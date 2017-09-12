@@ -71,7 +71,7 @@ I designed and developed the backend architecture using Node.js, Express, Passpo
 <div>
 ## Hack&Roll 2017
 ![Billboard](/images/cloudpaper.png)
-For NUS Hacker's Hack&Roll 2017, our team developed [Cloudpaper.], a webapp for collaborative document viewing designed for students to study together effectively.
+For NUS Hacker's Hack&Roll 2017, our team developed [Cloudpaper.](https://github.com/goweiwen/cloudpaper), a webapp for collaborative document viewing designed for students to study together effectively.
 
 I developed the backend using Koa, and the frontend using Materialize, PDF.js, and Socket.io.
 </div>

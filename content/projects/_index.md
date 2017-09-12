@@ -1,3 +1,7 @@
+---
+title: "Projects - Goh Wei Wen"
+---
+
 # Projects
 
 <div>

@@ -27,10 +27,6 @@
   </url>
   
   <url>
-    <loc>https://goweiwen.github.io/projects/</loc>
-  </url>
-  
-  <url>
     <loc>https://goweiwen.github.io/blog/</loc>
     <lastmod>2017-09-05T21:45:19+08:00</lastmod>
     <priority>0</priority>
@@ -57,6 +53,10 @@
     <loc>https://goweiwen.github.io/tags/nus/</loc>
     <lastmod>2017-09-05T21:45:19+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://goweiwen.github.io/projects/</loc>
   </url>
   
   <url>

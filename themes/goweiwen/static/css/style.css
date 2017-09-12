@@ -142,6 +142,25 @@ h2.title a:hover {
   max-width: 100%;
 }
 
+.projects div {
+  position: relative;
+  min-height: 240px;
+}
+
+.projects p {
+  margin-left: 128px;
+  padding-left: 20px;
+}
+
+.projects img {
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+}
+
 @media (max-width: 400px) {
   .navigation a {
     padding: 0.5em 0.2em;

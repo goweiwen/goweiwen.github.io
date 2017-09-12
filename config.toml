@@ -22,10 +22,10 @@ disqusShortname = "goweiwen"
   weight = 2
   url = "blog/"
 
-# [[menu.main]]
-#   name = "About"
-#   weight = 3
-#   url = "about/"
+[[menu.main]]
+  name = "Projects"
+  weight = 3
+  url = "projects/"
 
 [[menu.main]]
   name = "Résumé"

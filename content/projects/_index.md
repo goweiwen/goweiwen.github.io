@@ -7,7 +7,7 @@ title: "Projects - Goh Wei Wen"
 <div>
 ## Pixelect
 ![Pixelect](/images/pixelect.png)
-[Pixelect](https://github.com/anaprimawaty/pixelect) is an image sharing platform for friends to share group photos without having to use group chat applications like WhatsApp or Telegram. It helps friends gather their precious photogrpahic memories and vote on the best ones to upload to Facebook.
+[Pixelect](https://github.com/anaprimawaty/pixelect) is an image sharing platform for friends to share group photos without having to use group chat applications like WhatsApp or Telegram. It helps friends gather their precious photographic memories and vote on the best ones to upload to Facebook.
 
 I worked on the frontend, using Vue.js.
 </div>
@@ -17,7 +17,7 @@ I worked on the frontend, using Vue.js.
 ![collaborate!](/images/collaborate.png)
 For NUS's Orbital 2017, my partner and I developed [collaborate!](https://github.com/goweiwen/collaborate), an online collaborative web application that simulates a table top discussion for projects/teaching/learning while leveraging on technology.
 
-collaborate! won an honourable mention in the Apollo 13 category, which is the highest tier in the Orbital project.
+collaborate! won an honourable mention in the Apollo 11 category, which is the highest tier in the Orbital project.
 
 I worked on the frontend, using React + Redux with Socket.io. I also wrote the backend using Node.js with Koa, Passport.js, Pug, Socket.io, and Redux.
 </div>

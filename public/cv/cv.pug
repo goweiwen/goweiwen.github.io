@@ -1,0 +1,155 @@
+doctype html
+html
+  head
+    title Goh Wei Wen
+    link(href="css/normalize.css" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Playfair+Display:700" rel="stylesheet")
+    style.
+      body { background: #ffffff; font-family: Arimo, sans-serif; }
+      main { background: #ffffff; max-width: 800px; margin: auto; padding: 0; }
+      header, section { max-width: 800px; }
+      h1, h2, h3 { font-family: 'Playfair Display', serif; margin: 0; }
+      h1 { font-size: 1.4em; }
+      h2 { font-size: 1.2em; border-bottom: 1px solid #404040; }
+      body, a { color: #404040; }
+      
+      @media screen and (min-width: 840px) {
+        body { background-color: #f4f4f4; margin: 1em; }
+        main { padding: 3em; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+      }
+      
+      /* Header */
+      .header { text-align: center; }
+      .header .contact { list-style: none; margin: 0; padding: 0; }
+      .header .contact li { display: inline-block; }
+      .header .contact li svg { vertical-align: middle; margin: 0 0.5em 0 1.5em; }
+      
+      /* Main */
+      section { padding: 1em 0 0 0; }
+      section ul { list-style: none; margin: 0; padding: 0; }
+      section ul li { position: relative; margin: 0.5em 0; }
+      section ul li p { margin: 0; }
+      
+      section header { display: flex; font-weight: 700; }
+      section .title { flex: 1; text-align: left; }
+      section .company { flex: 1; text-align: center; }
+      section .date { flex: 1; text-align: right; }
+      
+      .projects .logo { position: absolute; left: 5px; top: 5px; width: 40px; height: 40px; }
+      .projects .description { margin-left: 64px; }
+  body
+    
+    main
+    
+      header.header
+        div.me
+          h1.title Goh Wei Wen
+        ul.contact
+          li.website
+            a(href="https://goweiwen.github.io")
+              svg(style="width:24px;height:24px" viewBox="0 0 24 24")
+                path(fill="#404040" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z")
+              | https://goweiwen.github.io
+          li.email
+            a(href="mailto:goweiwen@gmail.com")   
+              svg(style="width:24px;height:24px" viewBox="0 0 24 24")
+                path(fill="#404040" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z")
+              | goweiwen@gmail.com
+          li.phone
+            a(href="tel:+65-91252435")
+              svg(style="width:24px;height:24px" viewBox="0 0 24 24")
+                path(fill="#404040" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z")
+              | (+65) 91252435
+      
+      section.education
+        h2 Education
+        ul
+          li
+            header
+              span.title Bachelor of Computing
+              span.company National University of Singapore #[br]
+              span.date Aug 2016 - Present
+            p.description
+              | B.Comp. in Computer Science
+
+          li
+            header
+              span.title Diploma in Chemical Engineering
+              span.company Singapore Polytechnic #[br]
+              span.date Apr 2011 - Apr 2014
+            p.description
+              | Diploma in Chemical Engineering #[br]
+              | Plus Certificate in Engineering Mathematics and Science
+      
+      section.experience
+        h2 Experience
+        ul
+          li
+            header
+              span.title Personnel Systems Analyst
+              span.company Ministry of Defence of Singapore #[br]
+              span.date Dec 2014 - Aug 2016 #[br] May 2017 - Aug 2017
+            p.description
+              | Used Powersim Studio to analyse System Dynamics. #[br]
+              | Wrote VBA macros for Microsoft Excel and Access.
+
+          li
+            header
+              span.title IT Support
+              span Alpha Consulting Engineers Pte Ltd #[br]
+              span.date Mar 2014 - Jul 2014
+            p.description
+              | Administered Windows servers and clients. #[br]
+              | Redesigned homepage using HTML5, CSS and JavaScript. #[br]
+              | Implemented features in the intranet page using jQuery, PHP and MariaDB. #[br]
+
+          li
+            header
+              span.title Technician Trainee
+              span Chemical Process Technology Centre #[br]
+              span.date Feb 2013 - Apr 2013
+            p.description
+              | Managed the day to day operations of chemical plant over 12-hour shifts
+                
+      section.projects
+        h2 Projects
+        ul
+          li
+            img.logo(src="images/pixelect.png")
+            div.description
+              strong #[a(href="https://github.com/anaprimawaty/pixelect") Pixelect]
+              |  (2017): an image sharing platform for friends to upload and share group photos quickly and easily.
+              | (Vue.js, Bulma, Node.js, Express)
+          li
+            img.logo(src="images/collaborate.png")
+            div.description
+              strong #[a(href="https://github.com/goweiwen/collaborate") collaborate!]
+              |  (2017): a collaborative webapp that simulates a table top discussion.
+              | Awarded honourable mention in NUS's Orbital 2017.
+              | (React + Redux, Socket.io, Bulma, Node.js, Koa)
+          li
+            img.logo(src="images/ivle-sync.png")
+            div.description
+              strong #[a(href="https://github.com/goweiwen/ivle-sync") ivle-sync]
+              |  (2016): a command-line interface application that automatically downloads files, announcements, and webcasts from the National University of Singapore’s IVLE portal.
+              | (Python 3)
+      
+      section.awards
+        h2 Awards
+        ul
+          li
+            strong Orbital Project Apollo 11 Honorable Mention
+            |  (2017): collaborate! won an honorable mention in the Apollo 11 (advanced) category of NUS School of Computing's Orbital 2017.
+          li
+            strong DMG Excellence Award (Individual)
+            |  (2016): // TODO
+      
+      section.languages
+        h2 Languages and Technologies
+        ul
+          li
+            | Python, JavaScript, HTML/CSS, Java, Kotlin, Scala, Haskell, Elm, Ruby, PHP, SQL, VBA, Octave, Lua
+          li
+            | Vue.js, React/Redux, Express, Flask, Ruby on Rails, Unity3D, LÖVE2D, Pygame, Phaser
+          li
+            | English (native), Chinese (native), Japanese (conversational, JLPT N3)

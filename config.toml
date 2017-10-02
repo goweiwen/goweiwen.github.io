@@ -26,8 +26,3 @@ disqusShortname = "goweiwen"
   name = "Projects"
   weight = 3
   url = "projects/"
-
-[[menu.main]]
-  name = "Résumé"
-  weight = 4
-  url = "cv/"

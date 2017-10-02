@@ -32,7 +32,13 @@ console.log(fbId)
 ```
 Wait, what?
 
-To understand this, you need to know that JavaScript stores all numbers as a double precision float. If you have a number larger than `Number.MAX_SAFE_INTEGER` or smaller than `Number.MIN_SAFE_INTEGER`, you can't represent it as an integer in JavaScript.
+To understand this, you need to know that JavaScript stores all numbers as a double precision float. Here's an image from Wikipedia to help me explain better.
+
+![IEEE 754 Double Floating Point Format](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/927px-IEEE_754_Double_Floating_Point_Format.svg.png)
+
+When your number is larger than `Number.MAX_SAFE_INTEGER` (2<sup>53</sup>-1) or smaller than `Number.MIN_SAFE_INTEGER` (-(2<sup>53</sup>-1)), it can't be properly represented in a 64-bit float, because all the bits can't fit in the fraction component.
+
+This means that if you have a number outside that range, you can't safely represent it as an integer in JavaScript. It might be stored correctly, but it might also not be. In general, just don't use `Number` to store huge numbers.
 
 Because this rounding problem only occurs for some numbers, the bug it caused only affected some users, and was difficult to reproduce. In hindsight, a Facebook ID shouldn't be stored as a BigInt anyway, because it's returned to us by the Graph API as a string.
 

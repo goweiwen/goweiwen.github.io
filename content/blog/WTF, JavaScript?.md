@@ -1,7 +1,9 @@
 ---
 title: "WTF, JavaScript?"
 date: 2017-10-02T23:15:34+08:00
-tags: CS3216, NUS
+tags:
+  - CS3216
+  - NUS
 ---
 
 JavaScript is a pain. It's a pain every web developer has to endure (even if you use something like Kotlin or Dart, you'll still need to understand what happens under the hood).

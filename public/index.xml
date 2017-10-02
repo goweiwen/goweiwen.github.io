@@ -6,12 +6,17 @@
     <description>Recent content on Goh Wei Wen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+<<<<<<< HEAD
     <lastBuildDate>Mon, 02 Oct 2017 23:15:34 +0800</lastBuildDate>
+=======
+    <lastBuildDate>Tue, 05 Sep 2017 21:45:19 +0800</lastBuildDate>
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
     
 	<atom:link href="https://goweiwen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+<<<<<<< HEAD
       <title>WTF, JavaScript?</title>
       <link>https://goweiwen.github.io/blog/wtf-javascript/</link>
       <pubDate>Mon, 02 Oct 2017 23:15:34 +0800</pubDate>
@@ -22,6 +27,8 @@ It&amp;rsquo;s quick to develop in, but there are some quirks that can catch you
     </item>
     
     <item>
+=======
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
       <title>Mendeley</title>
       <link>https://goweiwen.github.io/blog/mendeley/</link>
       <pubDate>Tue, 05 Sep 2017 21:45:19 +0800</pubDate>

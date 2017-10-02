@@ -13,21 +13,31 @@ html
       h2 { font-size: 1.2em; border-bottom: 1px solid #404040; }
       body, a { color: #404040; }
       
+<<<<<<< HEAD
       @media screen {
         body { margin: 1em; }
       }
       
       @media screen and (min-width: 840px) {
         body { background-color: #f4f4f4; }
+=======
+      @media screen and (min-width: 840px) {
+        body { background-color: #f4f4f4; margin: 1em; }
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
         main { padding: 3em; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
       }
       
       /* Header */
       .header { text-align: center; }
       .header .contact { list-style: none; margin: 0; padding: 0; }
+<<<<<<< HEAD
       .header .contact li a { text-decoration: none; }
       .header .contact li { display: inline-block; }
       .header .contact li svg { vertical-align: middle; margin: 0 0.5em 0 1em; }
+=======
+      .header .contact li { display: inline-block; }
+      .header .contact li svg { vertical-align: middle; margin: 0 0.5em 0 1.5em; }
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
       
       /* Main */
       section { padding: 1em 0 0 0; }
@@ -35,6 +45,7 @@ html
       section ul li { position: relative; margin: 0.5em 0; }
       section ul li p { margin: 0; }
       
+<<<<<<< HEAD
       /* Education, Experience */
       section header { display: flex; font-weight: 700; }
       section .title { flex: 1; text-align: left; }
@@ -61,6 +72,15 @@ html
       /* Languages, Interests */
       .languages ul, .interests ul { margin: 8px 0; list-style: disc; }
       .languages ul li, .interests ul li { margin: 0 0 0 18px; }
+=======
+      section header { display: flex; font-weight: 700; }
+      section .title { flex: 1; text-align: left; }
+      section .company { flex: 1; text-align: center; }
+      section .date { flex: 1; text-align: right; }
+      
+      .projects .logo { position: absolute; left: 0; top: 0; width: 32px; height: 32px; }
+      .projects .description { margin-left: 40px; }
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
   body
     
     main
@@ -69,6 +89,14 @@ html
         div.me
           h1.title Goh Wei Wen
         ul.contact
+<<<<<<< HEAD
+=======
+          li.website
+            a(href="https://goweiwen.github.io")
+              svg(style="width:24px;height:24px" viewBox="0 0 24 24")
+                path(fill="#404040" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z")
+              | https://goweiwen.github.io
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
           li.email
             a(href="mailto:goweiwen@gmail.com")   
               svg(style="width:24px;height:24px" viewBox="0 0 24 24")
@@ -78,6 +106,7 @@ html
             a(href="tel:+65-91252435")
               svg(style="width:24px;height:24px" viewBox="0 0 24 24")
                 path(fill="#404040" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z")
+<<<<<<< HEAD
               | +65 91252435
           li.website
             a(href="https://goweiwen.github.io")
@@ -89,6 +118,9 @@ html
               svg(style="width:24px;height:24px" viewBox="0 0 24 24")
                 path(fill="#000000" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z")
               | Singapore
+=======
+              | (+65) 91252435
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
       
       section.education
         h2 Education
@@ -96,19 +128,34 @@ html
           li
             header
               span.title Bachelor of Computing
+<<<<<<< HEAD
               span.company National University of Singapore
               span.date Aug 2016 - Present
             ul.description
               li B.Comp. in Computer Science. (CAP: 4.81, GPA equivalent: 3.85)
+=======
+              span.company National University of Singapore #[br]
+              span.date Aug 2016 - Present
+            p.description
+              | B.Comp. in Computer Science
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
 
           li
             header
               span.title Diploma in Chemical Engineering
+<<<<<<< HEAD
               span.company Singapore Polytechnic
               span.date Apr 2011 - Apr 2014
             ul.description
               li Diploma in Chemical Engineering. (GPA: 3.67)
               li Plus Certificate in Engineering Mathematics and Science
+=======
+              span.company Singapore Polytechnic #[br]
+              span.date Apr 2011 - Apr 2014
+            p.description
+              | Diploma in Chemical Engineering #[br]
+              | Plus Certificate in Engineering Mathematics and Science
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
       
       section.experience
         h2 Experience
@@ -116,6 +163,7 @@ html
           li
             header
               span.title Personnel Systems Analyst
+<<<<<<< HEAD
               span.company Ministry of Defence
               span.date Dec 2014 - Aug 2016#[br]May 2017 - Aug 2017
             ul.description
@@ -131,14 +179,38 @@ html
               li Administered Windows servers and clients using Active Directory.
               li Redesigned homepage using HTML5, CSS and JavaScript.
               li Implemented features in the intranet page using jQuery, PHP and MariaDB/MySQL.
+=======
+              span.company Ministry of Defence of Singapore #[br]
+              span.date Dec 2014 - Aug 2016 #[br] May 2017 - Aug 2017
+            p.description
+              | Used Powersim Studio to analyse System Dynamics. #[br]
+              | Wrote VBA macros for Microsoft Excel and Access.
+
+          li
+            header
+              span.title IT Support
+              span Alpha Consulting Engineers Pte Ltd #[br]
+              span.date Mar 2014 - Jul 2014
+            p.description
+              | Administered Windows servers and clients. #[br]
+              | Redesigned homepage using HTML5, CSS and JavaScript. #[br]
+              | Implemented features in the intranet page using jQuery, PHP and MariaDB. #[br]
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
 
           li
             header
               span.title Technician Trainee
+<<<<<<< HEAD
               span.company Chemical Process Technology Centre
               span.date Feb 2013 - Apr 2013
             ul.description
               li Managed the day to day operations of chemical plant over 12-hour shifts.
+=======
+              span Chemical Process Technology Centre #[br]
+              span.date Feb 2013 - Apr 2013
+            p.description
+              | Managed the day to day operations of chemical plant over 12-hour shifts
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
                 
       section.projects
         h2 Projects
@@ -160,22 +232,35 @@ html
             img.logo(src="images/ivle-sync.png")
             div.description
               strong #[a(href="https://github.com/goweiwen/ivle-sync") ivle-sync]
+<<<<<<< HEAD
               |  (2016): a command-line interface application that automatically downloads files, announcements, and webcasts from National University of Singapore’s IVLE portal.
+=======
+              |  (2016): a command-line interface application that automatically downloads files, announcements, and webcasts from the National University of Singapore’s IVLE portal.
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
               | (Python 3)
       
       section.awards
         h2 Awards
         ul
           li
+<<<<<<< HEAD
             strong Orbital Programme 2017 Honorable Mention (Apollo 11)
             |  (2017): collaborate! won an honorable mention in the advanced category of NUS School of Computing's Orbital 2017.
           li
             strong DMG Excellence Award (Individual)
             |  (2016): awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards their work.
+=======
+            strong Orbital Project Apollo 11 Honorable Mention
+            |  (2017): collaborate! won an honorable mention in the Apollo 11 (advanced) category of NUS School of Computing's Orbital 2017.
+          li
+            strong DMG Excellence Award (Individual)
+            |  (2016): // TODO
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d
       
       section.languages
         h2 Languages and Technologies
         ul
+<<<<<<< HEAD
           li Python, JavaScript, HTML/CSS, Java, Kotlin, Haskell, Elm, Ruby, PHP, SQL, VBA, Octave, Lua
           li Vue.js, React/Redux, Express, Flask, Ruby on Rails, Unity3D, LÖVE2D, Pygame, Phaser
             
@@ -184,3 +269,11 @@ html
         ul
           li Languages: English (native), Chinese (native), Japanese (conversational, JLPT N3)
           li Hobbies: Leathercraft, Electronics, Drawing
+=======
+          li
+            | Python, JavaScript, HTML/CSS, Java, Kotlin, Scala, Haskell, Elm, Ruby, PHP, SQL, VBA, Octave, Lua
+          li
+            | Vue.js, React/Redux, Express, Flask, Ruby on Rails, Unity3D, LÖVE2D, Pygame, Phaser
+          li
+            | English (native), Chinese (native), Japanese (conversational, JLPT N3)
+>>>>>>> 750df26da05f10c85a49788ad990bfd30f35821d

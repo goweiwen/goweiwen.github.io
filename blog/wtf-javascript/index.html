@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Week 2 Of CS3216</title>
+    <title>WTF, JavaScript?</title>
     <link rel="stylesheet" href="https://goweiwen.github.io/css/normalize.css">
     <link rel="stylesheet" href="https://goweiwen.github.io/css/skeleton.css">
     <link rel="stylesheet" href="https://goweiwen.github.io/css/style.css">
@@ -33,29 +33,51 @@
       </a>
 
       <main role="main">
-        <article class="blog-post" itemid="https://goweiwen.github.io/blog/week-2-of-cs3216/" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="blog-post" itemid="https://goweiwen.github.io/blog/wtf-javascript/" itemscope itemtype="http://schema.org/BlogPosting">
           <h2 class="title" itemprop="headline">
-            <strong><a href="https://goweiwen.github.io/blog/week-2-of-cs3216/">Week 2 Of CS3216</a></strong>
+            <strong><a href="https://goweiwen.github.io/blog/wtf-javascript/">WTF, JavaScript?</a></strong>
           </h2>
           <p class="date" itemprop="about">
-            <time itemprop="datePublished" datetime="2017-08-28">Monday, 28 August, 2017</time>
+            <time itemprop="datePublished" datetime="2017-10-02">Monday, 2 October, 2017</time>
           </p>
           <div class="content" itemprop="articleBody">
-<p>Week 2 ends with two deliverables due on the midnight of Friday.</p>
+<p>JavaScript is a pain. It&rsquo;s a pain every web developer has to endure (even if you use something like Kotlin or Dart, you&rsquo;ll still need to understand what happens under the hood).</p>
 
-<p>My team's Orbital presentation happened earlier this week. One of the advisors for the Orbital project took CS3216 during his second year. He mentioned that in retrospect, taking it in year three, after CS3217, would be a better choice. That scared me, but I'm confident I'll be able to overcome any obstacles CS3216 throws.</p>
+<p>It&rsquo;s quick to develop in, but there are some quirks that can catch you off guard. You can partially mitigate this by using a proper linter and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a>, but it&rsquo;ll still bite you when you least expect it.</p>
 
-<p>At the Orbital presentation, I bumped into another pair from this year's intake, who told me that they had dropped this module. One of them made an impression on me during the first lecture because he came from an Engineering background. He had signed up together with a friend from Computing.</p>
+<p>Consider this snippet of code, meant to extract a field from an API&rsquo;s response.</p>
 
-<p>I really enjoyed this week's lecture, which taught us important software engineering principles, such as testing and code style. These principles are analogous to keeping your workspace tidy, which allows you to jump right into code that you haven't touched for a while and quickly familiarise yourself with it.</p>
+<pre><code class="language-js">// This is the response from the API.
+const data = `{
+  &quot;first_name&quot;: &quot;John&quot;,
+  &quot;last_name&quot;: &quot;Smith&quot;,
+  &quot;fb_id&quot;: 11111111111111111
+}`
 
-<p>Enforcing a strict set of rules is helpful in maintaining a consistent code base, which is something I had not needed in solo projects. I have not done testing in any of my projects, but I hope to do so soon.</p>
+// We parse it as JSON and extract the `fb_id` field.
+const { fb_id: fbId } = JSON.parse(data)
+</code></pre>
 
-<p>For assignment 1, our team uses JavaScript for both the front end and back end. We use <a href="https://eslint.org/" title="ESLint">ESLint</a> with the <a href="https://standardjs.com/" title="JavaScript Standard Style">JavaScript Standard Style</a>, along with the <a href="https://github.com/prettier/prettier-eslint" title="Prettier">Prettier</a> plugin, which allows us to run <code>eslint --fix</code> to automatically format our code according a specified set of rules. With proper tooling, this can be performed on file save, which alleviates the tedium of monitoring inconsequential details such as indentation style and semicolons to fit our code style.</p>
+<p>It looks like reasonable, right? But is it <em>correct</em>? Let&rsquo;s check.</p>
+
+<pre><code class="language-js">console.log(fbId === 11111111111111111)
+// Prints `true`
+
+console.log(fbId)
+// Prints `11111111111111112` Huh?
+</code></pre>
+
+<p>Wait, what?</p>
+
+<p>To understand this, you need to know that JavaScript stores all numbers as a double precision float. If you have a number larger than <code>Number.MAX_SAFE_INTEGER</code> or smaller than <code>Number.MIN_SAFE_INTEGER</code>, you can&rsquo;t represent it as an integer in JavaScript.</p>
+
+<p>Because this rounding problem only occurs for some numbers, the bug it caused only affected some users, and was difficult to reproduce. In hindsight, a Facebook ID shouldn&rsquo;t be stored as a BigInt anyway, because it&rsquo;s returned to us by the Graph API as a string.</p>
+
+<p>If you want to know more about JavaScript and its beauty, here&rsquo;s a talk by Gary Bernhardt, <a href="https://www.destroyallsoftware.com/talks/wat">Wat</a>, and a collection of examples, <a href="https://github.com/denysdovhan/wtfjs">wtfjs</a>.</p>
 
           </div>
           <p class="tags" itemprop="keywords">
-            Tagged <a href="/tags/cs3216">CS3216</a>, <a href="/tags/nus">NUS</a>
+            Tagged 
           </p>
           <div class="comments" itemprop="comment">
             <div id="disqus_thread"></div>

@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Goh Wei Wen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Sep 2017 21:45:19 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 23:15:34 +0800</lastBuildDate>
     
 	<atom:link href="https://goweiwen.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WTF, JavaScript?</title>
+      <link>https://goweiwen.github.io/blog/wtf-javascript/</link>
+      <pubDate>Mon, 02 Oct 2017 23:15:34 +0800</pubDate>
+      
+      <guid>https://goweiwen.github.io/blog/wtf-javascript/</guid>
+      <description>JavaScript is a pain. It&amp;rsquo;s a pain every web developer has to endure (even if you use something like Kotlin or Dart, you&amp;rsquo;ll still need to understand what happens under the hood).
+It&amp;rsquo;s quick to develop in, but there are some quirks that can catch you off guard. You can partially mitigate this by using a proper linter and strict mode, but it&amp;rsquo;ll still bite you when you least expect it.</description>
+    </item>
     
     <item>
       <title>Mendeley</title>

@@ -28,6 +28,11 @@ a:hover {
   color: #33c3f0;
 }
 
+pre > code {
+  padding: 1em !important;
+  border-radius: 15px;
+}
+
 .header, .footer {
   background: #424242;
 }

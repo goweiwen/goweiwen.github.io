@@ -1,7 +1,6 @@
 ---
 title: "On Vue And React"
 date: 2017-11-12T03:27:27+08:00
-draft: true
 ---
 
 Before coming into CS3216, the only JavaScript frameworks I had experience in was React. I did not foresee myself using Vue for all of my assignments. After attending a talk on Vue at a local meetup, I decided to try it out.

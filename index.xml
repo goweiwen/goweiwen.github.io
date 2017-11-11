@@ -6,10 +6,20 @@
     <description>Recent content on Goh Wei Wen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Oct 2017 23:15:34 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Nov 2017 03:27:27 +0800</lastBuildDate>
     
 	<atom:link href="https://goweiwen.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>On Vue And React</title>
+      <link>https://goweiwen.me/blog/on-vue-and-react/</link>
+      <pubDate>Sun, 12 Nov 2017 03:27:27 +0800</pubDate>
+      
+      <guid>https://goweiwen.me/blog/on-vue-and-react/</guid>
+      <description>Before coming into CS3216, the only JavaScript frameworks I had experience in was React. I did not foresee myself using Vue for all of my assignments. After attending a talk on Vue at a local meetup, I decided to try it out.
+There are several benefits to using Vue compared to React &amp;mdash; but the most important one is developer happiness. Choosing the right tool is especially important in CS3216, where you do not have enough time to learn a new framework for every assignment.</description>
+    </item>
     
     <item>
       <title>WTF, JavaScript?</title>

@@ -1,3 +1,10 @@
+@media print {
+  .header,
+  .logo {
+    display: none !important;
+  }
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 14pt;
@@ -160,6 +167,7 @@ h2.title a:hover {
 .projects div {
   position: relative;
   min-height: 240px;
+  page-break-inside: avoid;
 }
 
 .projects p {
@@ -174,6 +182,16 @@ h2.title a:hover {
   width: 128px;
   height: 128px;
   border-radius: 16px;
+}
+
+@media print {
+  .projects img {
+    width: 64px;
+    height: 64px;
+  }
+  .projects p {
+    margin-left: 64px;
+  }
 }
 
 .projects h1 {

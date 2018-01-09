@@ -3,25 +3,25 @@ html
   head
     title Goh Wei Wen
     link(href="css/normalize.css" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Playfair+Display:700" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Cinzel:400" rel="stylesheet")
     style.
-      body { background: #ffffff; font-family: Arimo, sans-serif; }
+      body { background: #ffffff; font-family: Arimo, sans-serif; font-size: 11pt; }
       main { background: #ffffff; max-width: 720px; margin: auto; padding: 0; }
       header, section { max-width: 720px; }
-      h1, h2, h3 { font-family: 'Playfair Display', serif; margin: 0; }
-      h1 { font-size: 1.4em; }
-      h2 { font-size: 1.2em; border-bottom: 1px solid #404040; }
-      body, a { color: #404040; }
-      
+      h1, h2, h3 { font-family: 'Cinzel', serif; margin: 0; color: #339966; }
+      h1 { font-size: 1.5em; }
+      h2 { font-size: 1.1em; border-bottom: 1px dotted #606264; }
+      body, a { color: #606264; }
+
       @media screen {
         body { margin: 1em; }
       }
-      
+
       @media screen and (min-width: 760px) {
         body { background-color: #f4f4f4; }
         main { padding: 3em; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
       }
-      
+
       /* Header */
       .header { display: flex; }
       .header .me { flex: auto; }
@@ -29,33 +29,33 @@ html
       .header .contact li a { text-decoration: none; }
       .header .contact li { display: block; }
       .header .contact li .icon { width: 1em; height: 1em; vertical-align: middle; margin: 0 0.5em 0 1em; }
-      
+
       /* Main */
       section { padding: 0.5em 0 0 0; }
       section ul { list-style: none; margin: 0; padding: 0; }
       section ul li { position: relative; margin: 0.5em 0; }
       section ul li:last-child { margin-bottom: 0; }
-      
+
       /* Education, Experience */
-      section header { display: flex; }
+      section header { display: flex; margin: 0.2em 0; }
       section .company { flex: initial }
       section .title { flex: initial; }
       section .date { flex: auto; text-align: right; }
-      
-      section ul.description { list-style: disc; }
-      section ul.description li { margin: 0 0 0 18px; }
-      
+
+      section ul.description { list-style: none; }
+      section ul.description li { margin: 0; }
+
       /* Projects */
       .projects .logo { position: absolute; left: -40px; top: 0; width: 32px; height: 32px; }
       .projects li { margin-left: 40px; }
-      
+
       /* Languages, Interests */
-      .languages ul, .interests ul { margin: 8px 0; list-style: disc; }
-      .languages ul li, .interests ul li { margin: 0 0 0 18px; }
+      .languages ul, .interests ul { margin: 8px 0; list-style: none; }
+      .languages ul li, .interests ul li { margin: 0; }
   body
-    
+
     main
-    
+
       header.header
         div.me
           h1.title Goh Wei Wen
@@ -67,7 +67,7 @@ html
               | github.com/goweiwen
 
           li.email
-            a(href="mailto:goweiwen@gmail.com")   
+            a(href="mailto:goweiwen@gmail.com")
               svg.icon(viewBox="0 0 28 28")
                 path(fill="#404040" d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z")
               | goweiwen@gmail.com
@@ -89,7 +89,7 @@ html
           //-     svg.icon(viewBox="0 0 32 32")
           //-       path(fill="#404040" d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z")
           //-     | Singapore
-      
+
       section.education
         h2 Education
         ul
@@ -98,7 +98,7 @@ html
               strong.company National University of Singapore
               span.date Aug 2016 - Present
             ul.description
-              li Bachelor of Computing in Computer Science. GPA: 4.81/5.00 (First Class Honours)
+              li Bachelor of Computing in Computer Science. GPA: 4.69/5.00 (First Class Honours)
 
           li
             header
@@ -107,21 +107,30 @@ html
             ul.description
               li Diploma in Chemical Engineering. GPA: 3.67/4.00
               li Diploma-Plus Certificate in Engineering Mathematics and Science
-      
+
       section.experience
         h2 Experience
         ul
           li
             header
+              strong.company Government Technology Agency of Singapore (GovTech)
+              span.title , Data Engineer
+              span.date Dec 2017 - Jan 2018
+            ul.description
+              li Implemented and released public APIs for Data.gov.sg using AWS Lambda and DynamoDB.
+              li Developed and deployed medicine reminder solution targeted to elderly.
+
+          li
+            header
               strong.company Ethereum Tech
               span.title , Freelance Web Developer
-              span.date Oct 2017 - Present
+              span.date Oct 2017 - Dec 2017
             ul.description
               li Created the front-end of a cryptocurrency mining dashboard with Vue.js.
 
           li
             header
-              strong.company Ministry of Defence
+              strong.company Ministry of Defence (Singapore)
               span.title , Personnel Systems Analyst
               span.date Dec 2014 - Aug 2016
             ul.description
@@ -132,7 +141,7 @@ html
           li
             header
               strong.company Alpha Consulting Engineers Pte Ltd
-              span.title , System Administrator Intern
+              span.title , System Administrator
               span.date Mar 2014 - Jul 2014
             ul.description
               li Administered Windows servers and clients using IIS and Active Directory.
@@ -146,7 +155,7 @@ html
           //-     span.date Feb 2013 - Apr 2013
           //-   ul.description
           //-     li Managed the day to day operations of chemical plant over 12-hour shifts.
-                
+
       section.projects
         h2 Projects
         ul
@@ -156,11 +165,11 @@ html
               strong.title Pear
               span.date Oct 2017 - Nov 2017
             ul.description
-              li iOS and Android app where users matchmake their friends.
+              li Progressive Web App (PWA), iOS and Android app where users matchmake their friends.
               li Won 2nd prize for CS3216 Software Product Engineering for Digital Markets in NUS School of Computing Term Project Showcase (11th STePS).
-              li Released app to iOS App Store and Google Play Store, hit 300 users within 24 hours.
               li Led front-end development using Vue.js and Cordova.
-              li Demo: #[a(href="http://perfectpear.me") perfectpear.me], Source: #[a(href="https://github.com/Pear-App/pear-client") github.com/Pear-App/pear-client]
+              li Released app to iOS App Store and Google Play Store, hit 300 users within 24 hours.
+              li Source: #[a(href="https://github.com/Pear-App/pear-client") github.com/Pear-App/pear-client], Demo: #[a(href="http://perfectpear.me") perfectpear.me]
 
           li
             img.logo(src="images/collaborate.png")
@@ -172,7 +181,16 @@ html
               li Awarded honourable mention in the Apollo 11 (advanced) category of NUS's Orbital 2017.
               li Led front-end development using React + Redux and Socket.io.
               li Wrote and deployed back-end using Node.js and Koa.
-              li Demo: #[a(href="https://collaborate-app.herokuapp.com") collaborate-app.herokuapp.com], Source: #[a(href="https://github.com/goweiwen/collaborate") github.com/goweiwen/collaborate]
+              li Source: #[a(href="https://github.com/goweiwen/collaborate") github.com/goweiwen/collaborate], Demo: #[a(href="https://collaborate-app.herokuapp.com") collaborate-app.herokuapp.com]
+
+          li
+            img.logo(src="images/vue.png")
+            header
+              strong.title vue-swing
+              span.date Oct 2017 - Present
+            ul.description
+              li Vue.js component for swiping cards left and right like seen in apps like Jelly and Tinder.
+              li Source: #[a(href="https://github.com/goweiwen/vue-swing") github.com/goweiwen/vue-swing]
 
           li
             img.logo(src="images/ivle-sync.png")
@@ -183,7 +201,7 @@ html
               li Desktop application to automatically downloads files, announcements, and webcasts from NUS's IVLE portal.
               li Created and maintained application built in Python 3.
               li Source: #[a(href="https://github.com/goweiwen/ivle-sync") github.com/goweiwen/ivle-sync]
-      
+
       //- section.awards
       //-   h2 Awards
       //-   ul
@@ -196,16 +214,16 @@ html
       //-     li
       //-       strong DMG Excellence Award (Individual)
       //-       |  (2016): awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards their work.
-      
+
       section.languages
-        h2 Preferred Languages and Technologies
+        h2 Preferred Technologies
         ul
-          li JavaScript, HTML/CSS, Python, Java, Kotlin, Haskell, Elm, Ruby, PHP, SQL
+          li JavaScript, HTML/CSS, Python, Ruby, Kotlin, Swift, Haskell, SQL
           //- , VBA, Octave, Lua
-          li Vue.js, React, Express, Koa, MongoDB, Flask, Ruby on Rails, Laravel
-            
-      section.interests
-        h2 Personal Interests
-        ul
-          li Languages: English (native), Chinese (native), Japanese (conversational, JLPT N3)
-          li Hobbies: Leathercraft, Electronics, Drawing
+          li Vue.js, React, Express/Koa, MongoDB, Ruby on Rails, Laravel
+
+      //- section.interests
+      //-   h2 Personal Interests
+      //-   ul
+      //-     li Languages: English (native), Chinese (native), Japanese (conversational, JLPT N3)
+      //-     li Hobbies: Leathercraft, Electronics, Drawing

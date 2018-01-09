@@ -22,6 +22,18 @@ I led the front-end development, using Vue.js and Cordova.
 {{% /md %}}
 
 </div>
+<div>
+{{% md %}}
+
+### vue-swing
+
+![vue-swing](/images/vue.png)
+
+[vue-swing](https://github.com/goweiwen/vue-swing) is a Vue.js component for swiping cards left and right, as seen in apps like Jelly and Tinder.
+
+{{% /md %}}
+
+</div>
 
 <div>
 {{% md %}}

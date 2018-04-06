@@ -1,14 +1,14 @@
 doctype html
 html
   head
-    title Goh Wei Wen
+    title Goh Wei Wen - Resume
     link(href="css/normalize.css" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Cinzel:400" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Cinzel:700" rel="stylesheet")
     style.
-      body { background: #ffffff; font-family: Arimo, sans-serif; font-size: 11pt; }
+      body { background: #ffffff; font-family: 'Arimo', sans-serif; font-size: 10.5pt; }
       main { background: #ffffff; max-width: 720px; margin: auto; padding: 0; }
       header, section { max-width: 720px; }
-      h1, h2, h3 { font-family: 'Cinzel', serif; margin: 0; color: #339966; }
+      h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 700; margin: 0; color: #339966; }
       h1 { font-size: 1.5em; }
       h2 { font-size: 1.1em; border-bottom: 1px dotted #606264; }
       body, a { color: #606264; }
@@ -26,24 +26,24 @@ html
       .header { display: flex; }
       .header .me { flex: auto; }
       .header .contact { flex: initial; list-style: none; margin: 0; padding: 0; }
+      .header .contact li { display: inline-block; }
       .header .contact li a { text-decoration: none; }
-      .header .contact li { display: block; }
       .header .contact li .icon { width: 1em; height: 1em; vertical-align: middle; margin: 0 0.5em 0 1em; }
 
       /* Main */
-      section { padding: 0.5em 0 0 0; }
+      section { padding: 0.3em 0 0 0; }
       section ul { list-style: none; margin: 0; padding: 0; }
-      section ul li { position: relative; margin: 0.5em 0; }
+      section ul li { position: relative; margin: 0.3em 0; }
       section ul li:last-child { margin-bottom: 0; }
 
       /* Education, Experience */
-      section header { display: flex; margin: 0.2em 0; }
+      section header { display: flex; margin: 0.2em 0 0 0; }
       section .company { flex: initial }
       section .title { flex: initial; }
       section .date { flex: auto; text-align: right; }
 
-      section ul.description { list-style: none; }
-      section ul.description li { margin: 0; }
+      section ul.description { list-style: n4ne; }
+      section ul.description li { margin: 0 0.5em; }
 
       /* Projects */
       .projects .logo { position: absolute; left: -40px; top: 0; width: 32px; height: 32px; }
@@ -58,7 +58,7 @@ html
 
       header.header
         div.me
-          h1.title Goh Wei Wen
+          h1.title #[span.last-name Goh] #[span.first-name Wei Wen]
         ul.contact
           li.github
             a(href="https://github.com/goweiwen")
@@ -99,6 +99,8 @@ html
               span.date Aug 2016 - Present
             ul.description
               li Bachelor of Computing in Computer Science. GPA: 4.70/5.00 (First Class Honours)
+              li Teaching Assistant for CS2103 Software Engineering (AY 17/18 Sem 2)
+              li Advisor for NUS Orbital 2018
 
           li
             header
@@ -114,39 +116,42 @@ html
           li
             header
               strong.company Government Technology Agency of Singapore (GovTech)
-              span.title , Data Engineer
+              em.title , Data Engineer
               span.date Dec 2017 - Jan 2018
             ul.description
-              li Implemented and released public APIs for Data.gov.sg using AWS Lambda and DynamoDB.
-              li Developed and deployed medicine reminder solution targeted to elderly.
+              li Implemented and released public APIs for Data.gov.sg portal using Node.js with AWS Lambda and DynamoDB.
+              li Minimized AWS Lambda costs by benchmarking, profiling, and optimizing slow-running Node.js scripts.
+              li Developed and deployed SMS-based medicine reminder solution targeted at middle-aged users.
 
           li
             header
               strong.company Ethereum Tech
-              span.title , Freelance Web Developer
+              em.title , Freelance Web Developer
               span.date Oct 2017 - Dec 2017
             ul.description
               li Created the front-end of a cryptocurrency mining analytics dashboard with Vue.js.
+              li Suggested and implemented improvements to user experience from client's original design.
 
           li
             header
               strong.company Ministry of Defence (Singapore)
-              span.title , Personnel Systems Analyst
+              em.title , Personnel Systems Analyst
               span.date Dec 2014 - Aug 2016
             ul.description
               li Awarded DMG Excellence Award (Individual) for displaying exemplary attitude towards work.
-              li Simulated and analysed personnel movement using System Dynamics.
-              li Wrote VBA macros and SQL queries for Microsoft Access and Excel.
+              li Simulated and analysed personnel movement using complex system dynamics simulations.
+              li Wrote VBA macros and SQL queries for Microsoft Access, Excel and Word.
 
           li
             header
               strong.company Alpha Consulting Engineers Pte Ltd
-              span.title , System Administrator
+              em.title , System Administrator
               span.date Mar 2014 - Jul 2014
             ul.description
               li Administered Windows servers and clients using IIS and Active Directory.
               li Redesigned homepage using HTML5, CSS and JavaScript.
               li Implemented features in the intranet page using jQuery, PHP and MariaDB/MySQL.
+              li Decompiled and modified legacy JavaServer Pages application.
 
           //- li
           //-   header
@@ -166,7 +171,6 @@ html
               span.date Oct 2017 - Nov 2017
             ul.description
               li Progressive Web App (PWA), iOS and Android app where users matchmake their friends.
-              li Won 2nd prize for CS3216 Software Product Engineering for Digital Markets in NUS School of Computing Term Project Showcase (11th STePS).
               li Led front-end development using Vue.js and Cordova.
               li Released app to iOS App Store and Google Play Store, hit 300 users within 24 hours.
               li Source: #[a(href="https://github.com/Pear-App/pear-client") github.com/Pear-App/pear-client], Demo: #[a(href="http://perfectpear.me") perfectpear.me]
@@ -178,7 +182,6 @@ html
               span.date Jun 2017 - Aug 2017
             ul.description
               li Real-time collaborative webapp that simulates a table top discussion.
-              li Awarded honourable mention in the Apollo 11 (advanced) category of NUS's Orbital 2017.
               li Led front-end development using React + Redux and Socket.io.
               li Wrote and deployed back-end using Node.js and Koa.
               li Source: #[a(href="https://github.com/goweiwen/collaborate") github.com/goweiwen/collaborate], Demo: #[a(href="https://collaborate-app.herokuapp.com") collaborate-app.herokuapp.com]
@@ -190,6 +193,7 @@ html
               span.date Oct 2017 - Present
             ul.description
               li Vue.js component for swiping cards left and right, as seen in apps like Jelly and Tinder.
+              li Published on NPM and actively maintained.
               li Source: #[a(href="https://github.com/goweiwen/vue-swing") github.com/goweiwen/vue-swing]
 
           li
@@ -198,29 +202,52 @@ html
               strong.title ivle-sync
               span.date Aug 2016 - Present
             ul.description
-              li Desktop application to automatically downloads files, announcements, and webcasts from NUS's IVLE portal.
+              li Automatically downloads files, announcements and webcasts from NUS's IVLE portal.
               li Created and maintained application built in Python 3.
               li Source: #[a(href="https://github.com/goweiwen/ivle-sync") github.com/goweiwen/ivle-sync]
 
-      //- section.awards
-      //-   h2 Awards
-      //-   ul
-      //-     li
-      //-       strong 11th STePS 2nd Prize
-      //-       |  (2017): Pear won the 2nd prize in NUS's 11th School of Computing Term Project Showcase.
-      //-     li
-      //-       strong Orbital Programme 2017 Honorable Mention (Apollo 11)
-      //-       |  (2017): collaborate! won an honorable mention in the advanced category of NUS School of Computing's Orbital 2017.
-      //-     li
-      //-       strong DMG Excellence Award (Individual)
-      //-       |  (2016): awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards their work.
+      section.awards
+        h2 Awards
+        ul
+          li
+            header
+              strong.title Yale-NUS Data 2.0 Datathon
+              em.title , First Prize
+              span.date Mar 2018
+            ul.description
+              li Studied viability of ride sharing in Singapore compared to public transport regarding carbon emissions using R.
+          li
+            header
+              strong.title NUS School of Computing Term Project Showcase (11th STePS)
+              em.title , Second Prize
+              span.date Nov 2017
+            ul.description
+              li Pear won 2nd prize in NUS's 11th School of Computing Term Project Showcase (STePS).
+          li
+            header
+              strong.title NUS Orbital Programme 2017
+              em.title , Honorable Mention (Apollo 11)
+              span.date Sep 2017
+            ul.description
+              li collaborate! won honorable mention in the advanced category of NUS School of Computing's Orbital 2017.
+          li
+            header
+              strong.title FOSSASIA 2017 Microsoft Mission Mars Challenge
+              em.title , Second Prize
+              span.date Mar 2017
+          li
+            header
+              strong.title DMG Excellence Award (Individual)
+              span.date Mar 2016
+            ul.description
+              li Awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards work.
 
       section.languages
         h2 Preferred Technologies
         ul
-          li JavaScript, HTML/CSS, Python, Ruby, Kotlin, Swift, Haskell, SQL
+          li JavaScript, HTML/CSS, Python, Golang, Haskell, Kotlin, Swift, Scala, Java, PHP, SQL
           //- , VBA, Octave, Lua
-          li Vue.js, React, Express/Koa, MongoDB, Ruby on Rails, Laravel
+          li Vue.js, React, Angular, Elm, Node.js, Django, Laravel, Keras, TensorFlow
 
       //- section.interests
       //-   h2 Personal Interests

@@ -1,0 +1,100 @@
+Goh Wei Wen
+github.com/goweiwen - goweiwen@gmail.com - +65 91252435
+
+Education
+---------
+
+National University of Singapore
+Aug 2016 - Present
+- Bachelor of Computing in Computer Science. GPA: 4.70/5.00 (First
+  Class Honours)
+
+Singapore Polytechnic
+Apr 2011 - Apr 2014
+- Diploma in Chemical Engineering. GPA: 3.67/4.00
+- Diploma-Plus Certificate in Engineering Mathematics and Science
+
+Experience
+----------
+
+Government Technology Agency of Singapore (GovTech)
+Data Engineer
+Dec 2017 - Jan 2018
+- Implemented and released public APIs for Data.gov.sg using AWS
+  Lambda and DynamoDB.
+- Developed and deployed medicine reminder solution targeted to
+  elderly.
+
+Ethereum Tech
+Freelance Web Developer
+Oct 2017 - Dec 2017
+- Created the front-end of a cryptocurrency mining analytics
+  dashboard with Vue.js.
+
+Ministry of Defence (Singapore)
+Personnel Systems Analyst
+Dec 2014 - Aug 2016
+- Awarded DMG Excellence Award (Individual) for displaying
+  exemplary attitude towards work.
+- Simulated and analysed personnel movement using System Dynamics.
+- Wrote VBA macros and SQL queries for Microsoft Access and Excel.
+
+Alpha Consulting Engineers Pte Ltd
+System Administrator
+Mar 2014 - Jul 2014
+- Administered Windows servers and clients using IIS and Active
+  Directory.
+- Redesigned homepage using HTML5, CSS and JavaScript.
+- Implemented features in the intranet page using jQuery, PHP and
+  MariaDB/MySQL.
+
+Projects
+--------
+
+Pear
+Oct 2017 - Nov 2017
+- Progressive Web App (PWA), iOS and Android app where users
+  matchmake their friends.
+- Won 2nd prize for CS3216 Software Product Engineering for
+  Digital Markets in NUS School of Computing Term Project Showcase
+  (11th STePS).
+- Led front-end development using Vue.js and Cordova.
+- Released app to iOS App Store and Google Play Store, hit 300
+  users within 24 hours.
+- Source:
+  [github.com/Pear-App/pear-client](https://github.com/Pear-App/pear-client),
+  Demo: [perfectpear.me](http://perfectpear.me)
+
+collaborate!
+Jun 2017 - Aug 2017
+- Real-time collaborative webapp that simulates a table top
+  discussion.
+- Awarded honourable mention in the Apollo 11 (advanced) category
+  of NUS's Orbital 2017.
+- Led front-end development using React + Redux and Socket.io.
+- Wrote and deployed back-end using Node.js and Koa.
+- Source:
+  [github.com/goweiwen/collaborate](https://github.com/goweiwen/collaborate),
+  Demo:
+  [collaborate-app.herokuapp.com](https://collaborate-app.herokuapp.com)
+
+vue-swing
+Oct 2017 - Present
+- Vue.js component for swiping cards left and right, as seen in
+  apps like Jelly and Tinder.
+- Source:
+  [github.com/goweiwen/vue-swing](https://github.com/goweiwen/vue-swing)
+
+ivle-sync
+Aug 2016 - Present
+- Desktop application to automatically downloads files,
+  announcements, and webcasts from NUS's IVLE portal.
+- Created and maintained application built in Python 3.
+- Source:
+  [github.com/goweiwen/ivle-sync](https://github.com/goweiwen/ivle-sync)
+
+Preferred Technologies
+----------------------
+
+JavaScript, HTML/CSS, Python, Ruby, Kotlin, Swift, Haskell, SQL
+Vue.js, React, Express/Koa, MongoDB, Ruby on Rails, Laravel

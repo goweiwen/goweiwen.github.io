@@ -7,15 +7,30 @@ html(lang="en")
     link(href="css/normalize.css" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Cinzel:700" rel="stylesheet")
     style.
-      body { background: #ffffff; font-family: 'Arimo', sans-serif; line-height: 1.3em; }
-      main { background: #ffffff; max-width: 960px; margin: auto; padding: 3em; }
+      body { background: #fff; font-family: 'Arimo', sans-serif; line-height: 1.3em; }
+      main { background: #fff; max-width: 960px; margin: auto; padding: 3em; }
       header, section { max-width: 960px; }
-      h1, h2, h3 { font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700; margin: 0; color: #339966; }
+      h1, h2, h3, .navbar { font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700; margin: 0; color: #396; }
       h2 { font-size: 1.5em; border-bottom: 1px dotted #606264; }
       body { color: #606264; }
       a { color: #60b0d0; text-decoration: underline; }
 
       * { transition: all 0.2s; }
+
+      /* Navbar */
+      main { margin-top: 3em; }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1; height: 3em; background-color: #fff; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      .navbar .links { list-style: none; padding: 0; margin: 0; text-align: center; background-color: #fff; }
+      .navbar .links li { display: inline-block; margin: 1em 0.5em 0 0.5em; height: 2em; text-transform: uppercase; }
+      .navbar .links li a.link { color: #606264; text-decoration: none; padding: calc(1em - 6px); }
+      .navbar .links li a:hover { border-bottom: 3px solid #339966; }
+      .navbar .hamburger { cursor: pointer; display: none; position: absolute; top: 0; right: 0; padding: calc(1.5em - 12px); height: 24px; width: 24px; }
+      .navbar .hamburger svg { height: 24px; width: 24px; vertical-align: middle; }
+      @media (max-width: 920px) {
+        .navbar .links { position: absolute; top: 0; visibility: hidden; opacity: 0; }
+        .navbar .hamburger { display: block; }
+        .navbar .links.is-visible { visibility: visible; opacity: 1; transform: translateY(3em); box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      }
 
       /* Header */
       .header .me { display: flex; padding: 0 64px; }
@@ -26,10 +41,10 @@ html(lang="en")
       .header .me .face .contact li a { text-decoration: none; }
       .header .me .face .contact li .icon { width: 1.5em; height: 1.5em; vertical-align: middle; margin: 0 0.6em; }
       .header .me .face .contact li .icon:hover { transform: translateY(-1px); filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.1)); }
-      .header .me .face .contact li .icon:hover path { fil1: #808488; }
+      .header .me .face .contact li .icon:hover path { fill: #808488; }
       .download { margin: 2em 0; text-align: center; }
       .download a { text-decoration: none !important; display: inline-block; margin: 0 0.5em; }
-      .download .button { display: inline-flex; align-items: center; padding: 0.5em 0.6em; line-height: 100%; background: #68c3a3; color: #ffffff; border-radius: 5px; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      .download .button { display: inline-flex; align-items: center; padding: 0.5em 0.6em; line-height: 100%; background: #68c3a3; color: #fff; border-radius: 5px; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
       .download .button:hover { cursor: pointer; transform: translateY(-1px); background: #4eb28f; box-shadow: rgba(0,0,0,0.1) 0 5px 8px; }
       .download .button .icon { width: 24px; height: 24px; margin-right: 0.5em; }
 
@@ -82,9 +97,24 @@ html(lang="en")
       }
   body
 
+    nav.navbar
+
+      a.hamburger(href="#")
+        svg(viewport="0 0 24 24")
+          path(fill="#606264" d="M2.016 5.484h19.969v2.016h-19.969v-2.016zM2.016 10.5h19.969v2.016h-19.969v-2.016zM2.016 15.516h19.969v1.969h-19.969v-1.969z")
+
+
+      ul.links
+        li #[a.link(href="#header") About]
+        li #[a.link(href="#education") Education]
+        li #[a.link(href="#experience") Experience]
+        li #[a.link(href="#projects") Projects]
+        li #[a.link(href="#awards") Awards]
+        li #[a.link(href="#contact") Contact]
+
     main.main
 
-      header.header
+      header.header#header
         .me
           .face
             img(src="images/face.jpg" alt="Wei Wen, Goh" width="180" height="180")
@@ -128,7 +158,7 @@ html(lang="en")
                 path(fill="#ffffff" d="M23 14l-8 8-8-8h5v-12h6v12zM15 22h-15v8h30v-8h-15zM28 26h-4v-2h4v2z")
               | Download CV
 
-      section.education
+      section.education#education
         h2 Education
         p
           | Here's a peek into my formal education so far:
@@ -158,7 +188,7 @@ html(lang="en")
               li Diploma in Chemical Engineering. GPA: 3.67/4.00
               li Diploma-Plus Certificate in Engineering Mathematics and Science
 
-      section.experience
+      section.experience#experience
         h2 Professional Experience
         p
           | I've been programming professionally for a bit:
@@ -218,7 +248,7 @@ html(lang="en")
           //-   ul.description
           //-     li Managed the day to day operations of chemical plant over 12-hour shifts.
 
-      section.projects
+      section.projects#projects
         h2 Projects
         p
           | Here are some interesting projects I've worked on in the past:
@@ -266,11 +296,11 @@ html(lang="en")
               li Automatically downloads files, announcements and webcasts from NUS's IVLE portal.
               li Created and maintained application built in Python 3.
               li Source: #[a(href="https://github.com/goweiwen/ivle-sync") github.com/goweiwen/ivle-sync]
-          
+
         p
           | A more comprehensive list can be found #[a(href="https://goweiwen.me/projects") here].
 
-      section.awards
+      section.awards#awards
         h2 Awards and Achievements
         p
           | I have some awards to my name, too:
@@ -308,7 +338,7 @@ html(lang="en")
             ul.description
               li Awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards work.
 
-      section.technologies
+      section.technologies#technologies
         h2 Preferred Technologies
         p
           | Here are some languages I'm confident in working professionally with:
@@ -324,7 +354,7 @@ html(lang="en")
       //-     li Languages: English (native), Chinese (native), Japanese (conversational, JLPT N3)
       //-     li Hobbies: Leathercraft, Electronics, Drawing
 
-      section.contact
+      section.contact#contact
         h2 Get in Touch!
         p Feel free to give me a call or drop me an email if you want to have a chat!
         ul
@@ -372,14 +402,34 @@ html(lang="en")
               | Download CV
 
   script.
-    var nodeList = document.querySelectorAll('main > *');
+    // Hamburger
+    var links = document.querySelector('.links');
+    document.querySelector('.hamburger').addEventListener('click', function(e) {
+      e.preventDefault()
+      links.classList.toggle('is-visible');
+    });
+    // Links
+    document.querySelectorAll('.navbar .link').forEach(function(el) {
+      var target = document.querySelector(el.getAttribute('href'));
+      var y = target.offsetTop - 96;
+      el.addEventListener('click', function(e) {
+        e.preventDefault()
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      })
+    });
+    // Scroll Animation
+    var nodeList = document.querySelectorAll('main > *:not(.appear)');
     function handleScroll() {
       nodeList.forEach(function(el) {
         if (el.offsetTop <= window.pageYOffset + window.innerHeight &&
             el.offsetTop + el.offsetHeight > window.pageYOffset) {
+          nodeList = document.querySelectorAll('main > *:not(.appear)');
           el.classList.add('appear');
         }
       })
+      if (nodeList.length === 0) {
+        window.removeEventListener('scroll', handleScroll);
+      }
     }
     window.addEventListener('scroll', handleScroll);
     handleScroll();

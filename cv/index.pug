@@ -44,7 +44,7 @@ html(lang="en")
       .header .me .face .contact li .icon:hover path { fill: #808488; }
       .download { margin: 2em 0; text-align: center; }
       .download a { text-decoration: none !important; display: inline-block; margin: 0 0.5em; }
-      .download .button { display: inline-flex; align-items: center; padding: 0.5em 0.6em; line-height: 100%; background: #68c3a3; color: #fff; border-radius: 5px; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      .download .button { display: inline-flex; align-items: center; padding: 0.5em 0.6em; line-height: 100%; background: #68c3a3; color: #fff; border: none; border-radius: 5px; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
       .download .button:hover { cursor: pointer; transform: translateY(-1px); background: #4eb28f; box-shadow: rgba(0,0,0,0.1) 0 5px 8px; }
       .download .button .icon { width: 24px; height: 24px; margin-right: 0.5em; }
 
@@ -100,7 +100,7 @@ html(lang="en")
     nav.navbar
 
       a.hamburger(href="#")
-        svg(viewport="0 0 24 24")
+        svg(viewBox="0 0 24 24")
           path(fill="#606264" d="M2.016 5.484h19.969v2.016h-19.969v-2.016zM2.016 10.5h19.969v2.016h-19.969v-2.016zM2.016 15.516h19.969v1.969h-19.969v-1.969z")
 
 
@@ -130,7 +130,7 @@ html(lang="en")
                     path(fill="#606264" d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z")
 
               li.email
-                a(href="mailto:goweiwen@gmail.com" target="_blank")
+                a(href="mailto:weiwen@u.nus.edu" target="_blank")
                   svg.icon(viewBox="0 0 28 28")
                     path(fill="#606264" d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z")
 
@@ -152,11 +152,10 @@ html(lang="en")
               | Let me know if you want to have a chat!
 
         .download
-          a(href="Wei_Wen_Goh.pdf" target="_blank")
-            button.button 
-              svg.icon(viewbox="0 0 32 32")
-                path(fill="#ffffff" d="M23 14l-8 8-8-8h5v-12h6v12zM15 22h-15v8h30v-8h-15zM28 26h-4v-2h4v2z")
-              | Download CV
+          a.button(href="Wei_Wen_Goh.pdf" target="_blank")
+            svg.icon(viewbox="0 0 32 32")
+              path(fill="#ffffff" d="M23 14l-8 8-8-8h5v-12h6v12zM15 22h-15v8h30v-8h-15zM28 26h-4v-2h4v2z")
+            | Download CV
 
       section.education#education
         h2 Education
@@ -254,7 +253,7 @@ html(lang="en")
           | Here are some interesting projects I've worked on in the past:
         ul
           li
-            img.logo(src="images/pear.png")
+            img.logo(src="images/pear.png" alt="Pear")
             header
               strong.title Pear 
               span.date Oct 2017 - Nov 2017
@@ -266,7 +265,7 @@ html(lang="en")
               li Source: #[a(href="https://github.com/Pear-App/pear-client") github.com/Pear-App/pear-client], Info: #[a(href="http://isteps.comp.nus.edu.sg/event/11th-steps/module/CS3216/project/1") 11th STePS submission]
 
           li
-            img.logo(src="images/collaborate.png")
+            img.logo(src="images/collaborate.png" alt="collaborate!")
             header
               strong.title collaborate! 
               span.date Jun 2017 - Aug 2017
@@ -278,7 +277,7 @@ html(lang="en")
               li Source: #[a(href="https://github.com/goweiwen/collaborate") github.com/goweiwen/collaborate], Demo: #[a(href="https://collaborate-app.herokuapp.com") collaborate-app.herokuapp.com]
 
           li
-            img.logo(src="images/vue.png")
+            img.logo(src="images/vue.png" alt="vue-swing")
             header
               strong.title vue-swing 
               span.date Oct 2017 - Present
@@ -288,7 +287,7 @@ html(lang="en")
               li Source: #[a(href="https://github.com/goweiwen/vue-swing") github.com/goweiwen/vue-swing]
 
           li
-            img.logo(src="images/ivle-sync.png")
+            img.logo(src="images/ivle-sync.png" alt="ivle-sync")
             header
               strong.title ivle-sync 
               span.date Aug 2016 - Present
@@ -359,7 +358,7 @@ html(lang="en")
         p Feel free to give me a call or drop me an email if you want to have a chat!
         ul
           li.email
-            a(href="mailto:goweiwen@gmail.com" target="_blank")
+            a(href="mailto:weiwen@u.nus.edu" target="_blank")
               svg.icon(viewBox="0 0 28 28")
                 path(fill="#606264" d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z")
               | goweiwen@gmail.com
@@ -395,41 +394,41 @@ html(lang="en")
           //-     | Singapore
 
         .download
-          a(href="Wei_Wen_Goh.pdf" target="_blank")
-            button.button 
-              svg.icon(viewbox="0 0 32 32")
-                path(fill="#ffffff" d="M23 14l-8 8-8-8h5v-12h6v12zM15 22h-15v8h30v-8h-15zM28 26h-4v-2h4v2z")
-              | Download CV
+          a.button(href="Wei_Wen_Goh.pdf" target="_blank")
+            svg.icon(viewbox="0 0 32 32")
+              path(fill="#ffffff" d="M23 14l-8 8-8-8h5v-12h6v12zM15 22h-15v8h30v-8h-15zM28 26h-4v-2h4v2z")
+            | Download CV
 
-  script.
-    // Hamburger
-    var links = document.querySelector('.links');
-    document.querySelector('.hamburger').addEventListener('click', function(e) {
-      e.preventDefault()
-      links.classList.toggle('is-visible');
-    });
-    // Links
-    document.querySelectorAll('.navbar .link').forEach(function(el) {
-      var target = document.querySelector(el.getAttribute('href'));
-      var y = target.offsetTop - 96;
-      el.addEventListener('click', function(e) {
+    script.
+      // Hamburger
+      var links = document.querySelector('.links');
+      document.querySelector('.hamburger').addEventListener('click', function(e) {
         e.preventDefault()
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      })
-    });
-    // Scroll Animation
-    var nodeList = document.querySelectorAll('main > *:not(.appear)');
-    function handleScroll() {
-      nodeList.forEach(function(el) {
-        if (el.offsetTop <= window.pageYOffset + window.innerHeight &&
-            el.offsetTop + el.offsetHeight > window.pageYOffset) {
-          nodeList = document.querySelectorAll('main > *:not(.appear)');
-          el.classList.add('appear');
+        links.classList.toggle('is-visible');
+      });
+      // Links
+      document.querySelectorAll('.navbar .link').forEach(function(el) {
+        var target = document.querySelector(el.getAttribute('href'));
+        var y = target.offsetTop - 96;
+        el.addEventListener('click', function(e) {
+          e.preventDefault()
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          links.classList.remove('is-visible');
+        })
+      });
+      // Scroll Animation
+      var nodeList = document.querySelectorAll('main > *:not(.appear)');
+      function handleScroll() {
+        nodeList.forEach(function(el) {
+          if (el.offsetTop <= window.pageYOffset + window.innerHeight &&
+              el.offsetTop + el.offsetHeight > window.pageYOffset) {
+            nodeList = document.querySelectorAll('main > *:not(.appear)');
+            el.classList.add('appear');
+          }
+        })
+        if (nodeList.length === 0) {
+          window.removeEventListener('scroll', handleScroll);
         }
-      })
-      if (nodeList.length === 0) {
-        window.removeEventListener('scroll', handleScroll);
       }
-    }
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();

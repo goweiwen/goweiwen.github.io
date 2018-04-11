@@ -20,7 +20,6 @@ html(lang="en")
       /* Navbar */
       main { margin-top: 3em; }
       .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1; height: 3em; background-color: rgba(255,255,255,0.95); box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
-      .navbar.is-hidden { transform: translateY(-110%); }
       .navbar .links { list-style: none; padding: 0; margin: 0; text-align: center; }
       .navbar .links li { display: inline-block; margin: 1em 0.5em 0 0.5em; height: 2em; text-transform: uppercase; }
       .navbar .links li a.link { color: #606264; text-decoration: none; padding: calc(1em - 6px); }
@@ -28,7 +27,9 @@ html(lang="en")
       .navbar .hamburger { cursor: pointer; display: none; position: absolute; top: 0; right: 0; padding: calc(1.5em - 12px); height: 24px; width: 24px; }
       .navbar .hamburger svg { height: 24px; width: 24px; vertical-align: middle; }
       @media (max-width: 920px) {
-        .navbar .links { position: absolute; top: 0; visibility: hidden; opacity: 0; }
+        .navbar.is-hidden { transform: translateY(-110%); }
+        .navbar { background: #fff; }
+        .navbar .links { position: absolute; top: 0; visibility: hidden; opacity: 0; background: #fff; }
         .navbar .hamburger { display: block; }
         .navbar .links.is-visible { visibility: visible; opacity: 1; transform: translateY(3em); box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
       }
@@ -428,13 +429,13 @@ html(lang="en")
         } else {
           navbar.classList.add('is-hidden');
         }
+        scrollPosition = window.pageYOffset;
       }
       window.addEventListener('scroll', handleNavbarVisibility);
 
       // Scroll Animation
       var nodeList = document.querySelectorAll('main > *:not(.appear)');
       function handleAppearAnimation() {
-        scrollPosition = window.pageYOffset;
         nodeList.forEach(function(el) {
           if (el.offsetTop <= window.pageYOffset + window.innerHeight &&
               el.offsetTop + el.offsetHeight > window.pageYOffset) {

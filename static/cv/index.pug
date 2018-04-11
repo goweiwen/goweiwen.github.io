@@ -5,58 +5,88 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(href="css/normalize.css" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Cinzel:700" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Lato:400|Sacramento:400" rel="stylesheet")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.3/vivus.min.js" integrity="sha256-GJSSgiNsWEeYYiI5VIc/IWskeVOqofr9XycM3TBMBeQ=" crossorigin="anonymous")
     style.
       body { background: #fff; font-family: 'Arimo', sans-serif; line-height: 1.4em; }
       main { background: #fff; max-width: 960px; margin: auto; padding: 3em; }
       header, section { max-width: 960px; }
-      h1, h2, h3, .navbar { font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700; margin: 0; color: #396; }
-      h2 { font-size: 1.5em; border-bottom: 1px dotted #606264; }
+      h1, h2, h3, .navbar { font-family: 'Lato', sans-serif; font-weight: 400; color: #1e836c; line-height: 1.2em; }
+      h2 { font-size: 2.5em; color: #1e836c; }
+      h3 { font-size: 1.5em; color: #45b29a; }
       body { color: #606264; }
       a { color: #60b0d0; text-decoration: underline; }
 
-      * { transition: all 0.2s; }
+      section, nav, a, ul { transition: all 0.2s; }
+      svg path { transition: fill 0.2s; }
 
       /* Navbar */
       main { margin-top: 3em; }
-      .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1; height: 3em; background-color: rgba(255,255,255,0.95); box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1; height: 3.4em; background-color: rgba(255,255,255,0.95); box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      .navbar .hamburger { display: none; }
       .navbar .links { list-style: none; padding: 0; margin: 0; text-align: center; }
-      .navbar .links li { display: inline-block; margin: 1em 0.5em 0 0.5em; height: 2em; text-transform: uppercase; }
-      .navbar .links li a.link { color: #606264; text-decoration: none; padding: calc(1em - 6px); }
-      .navbar .links li a:hover { border-bottom: 3px solid #339966; }
-      .navbar .hamburger { cursor: pointer; display: none; position: absolute; top: 0; right: 0; padding: calc(1.5em - 12px); height: 24px; width: 24px; }
-      .navbar .hamburger svg { height: 24px; width: 24px; vertical-align: middle; }
+      .navbar .links li { font-size: 1.2em; display: inline-block; margin: 1em 0.5em 0 0.5em; height: 2em; }
+      .navbar .links li a.link { color: #45b29a; text-decoration: none; padding: calc(1em - 6px); }
+      .navbar .links li a:hover { color: #1e836c; border-bottom: 3px solid #1e836c; }
+      .navbar.is-transparent { background: none; box-shadow: none; }
       @media (max-width: 920px) {
         .navbar.is-hidden { transform: translateY(-110%); }
         .navbar { background: #fff; }
-        .navbar .links { position: absolute; top: 0; visibility: hidden; opacity: 0; background: #fff; }
-        .navbar .hamburger { display: block; }
+        .navbar .links { position: fixed; top: 0; visibility: hidden; opacity: 0; background: #fff; }
+        .navbar .hamburger { cursor: pointer; display: block; position: absolute; top: 0; left: 0; padding: calc(1.5em - 12px); height: 24px; width: 24px; }
+        .navbar .hamburger svg { height: 24px; width: 24px; vertical-align: middle; }
         .navbar .links.is-visible { visibility: visible; opacity: 1; transform: translateY(3em); box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+        .navbar.is-transparent .links.is-visible { left: 5vw; width: 90vw; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      }
+
+      /* Hero */
+      .hero { height: 100vh; display: flex; flex-direction: column; text-align: center; background-color: #dddddd; }
+      .hero .wrapper { margin: auto; }
+      .hero .intro, .hero .outro { font-family: 'Lato', sans-serif; font-size: 2em; margin: 1.5em 0; }
+      .hero .intro { animation: intro 0.4s; }
+      .hero .outro { animation: outro 4s; }
+      .hero .logo { width: 50vw; max-width: 70vh; margin: auto; }
+      .hero .contact { text-align: center; list-style: none; margin: 0; padding: 0; animation: outro 4s; }
+      .hero .contact li { display: inline-block; }
+      .hero .contact li a { text-decoration: none; }
+      .hero .contact li .icon { width: 3em; height: 3em; vertical-align: middle; margin: 0 1em; }
+      @media (max-width: 720px) {
+        .hero .logo { width: 80vw; }
+        .hero .intro, .hero .outro { font-size: 1.5em; }
+        .hero .contact li .icon { width: 2em; height: 2em; }
+      }
+      .hero .contact li .icon:hover { transform: translateY(-1px); filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.1)); }
+      .hero .contact li .icon:hover path { fill: #1e836c; }
+      @keyframes intro {
+        0% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes outro {
+        0% { opacity: 0; }
+        90% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
       }
 
       /* Header */
       .header .me { display: flex; padding: 0 64px; }
       .header .me .face { margin-right: 5em; }
       .header .me .face img { border-radius: 100%; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; width: 180px; height: 180px; }
-      .header .me .face .contact { text-align: center; list-style: none; margin: 1em 0;; padding: 0; }
-      .header .me .face .contact li { display: inline-block; }
-      .header .me .face .contact li a { text-decoration: none; }
-      .header .me .face .contact li .icon { width: 1.5em; height: 1.5em; vertical-align: middle; margin: 0 0.6em; }
-      .header .me .face .contact li .icon:hover { transform: translateY(-1px); filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.1)); }
-      .header .me .face .contact li .icon:hover path { fill: #808488; }
       .download { margin: 2em 0; text-align: center; }
       .download a { text-decoration: none !important; display: inline-block; margin: 0 0.5em; }
       .download .button { display: inline-flex; align-items: center; padding: 0.5em 0.6em; line-height: 100%; background: #68c3a3; color: #fff; border: none; border-radius: 5px; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
       .download .button:hover { cursor: pointer; transform: translateY(-1px); background: #4eb28f; box-shadow: rgba(0,0,0,0.1) 0 5px 8px; }
       .download .button .icon { width: 24px; height: 24px; margin-right: 0.5em; }
 
+      /* Divider */
+      hr { border: 1px dashed #eee; }
+
       section.contact ul { flex: initial; list-style: none; margin: 0; padding: 0; }
       section.contact ul li { display: block; }
       section.contact ul li a { text-decoration: none; }
-      section.contact ul li .icon { width: 1em; height: 1em; vertical-align: middle; margin: 0 0.5em 0 1em; }
+      section.contact ul li .icon { width: 1.5em; height: 1.5em; vertical-align: middle; margin: 0 0.5em 0 1em; }
 
       /* Main */
-      section { margin: 5em 0 0 0; overflow: hidden; }
+      section { margin: 2.5em 0; overflow: hidden; }
       section ul { list-style: none; margin: 0; padding: 0; }
       section ul li { position: relative; margin: 0.3em 0; }
       section ul li:last-child { margin-bottom: 0; }
@@ -113,12 +143,11 @@ html(lang="en")
 
   body
 
-    nav.navbar
+    nav.navbar.is-transparent
 
       a.hamburger(href="#")
         svg(viewBox="0 0 24 24")
           path(fill="#606264" d="M2.016 5.484h19.969v2.016h-19.969v-2.016zM2.016 10.5h19.969v2.016h-19.969v-2.016zM2.016 15.516h19.969v1.969h-19.969v-1.969z")
-
 
       ul.links
         li #[a.link(href="#header") About]
@@ -128,38 +157,60 @@ html(lang="en")
         li #[a.link(href="#awards") Awards]
         li #[a.link(href="#contact") Contact]
 
+    .hero
+      .wrapper
+
+        p.intro My name is
+
+        svg.logo#logo(viewBox="160 224 300 64" stroke-width="3" stroke="#606264" fill="none")
+          path(d="M188.6,261.4c-0.2,0.2-0.4,0.3-0.6,0.5c-5,3.7-10.7,3.8-15.1,0.7c-4.6-3.2-6.2-7.7-5.4-13.2c0.6-4.3,2.7-7.7,6.1-10.3 c3.7-2.8,7.9-3.7,12.5-3.2c3.7,0.4,6.7,1.9,9.2,4.5c2.3,2.4,3.6,5.3,4.6,8.4c1.8,5.8,2.2,11.8,2.4,17.8c0.1,3.6,0,7.2,0,10.8 c0,0.5-0.1,1.1,0.1,1.4l0.8,1.3c1.1-0.5,1.8-1.4,2.4-2.4c1.2-2.2,2.3-4.4,3.5-6.6c4.8-8.8,9.5-17.5,14.3-26.3 c0.7-1.3,1.2-3,2.9-3.5l0.4,0.4c0.4,1.1,0.4,2.1,0.3,3.2c-0.6,5-1.2,10-1.2,15c0,2.6,0.1,5.3,0.3,7.9c0.3,2.7,0.7,5.4,1.6,8 c2.2,6.1,7,8.2,12.8,6.7c4-1,6.8-3.8,9.2-6.8c3.1-3.9,5.1-8.3,6.7-13c2.7-7.6,4.3-15.4,3.6-23.5c-0.4-4.1-1.4-8.1-4.1-11.4")
+          path(d="M261.6,278.4c2.1-1,4-2.3,5.3-4.2c0.8-1.2,1.2-2.6,1.2-4c0-1.3-0.5-2.5-2-3c-1.3-0.5-2.5-0.1-3.5,0.6c-1.8,1.4-2.3,3.5-2.4,5.6 c-0.1,1.8,0.4,3.3,1.2,5c0.7,1.5,1.5,2.6,2.8,3.4c1,0.6,2.3,0.7,3.5,0.9l0.8-0.1c1.6-0.2,3-0.7,4.2-1.8c1-1,2.1-2,2.9-3.2 c0.5-0.8,3.2-3.3,3.5-12")
+          path(d="M279,265.5c-0.2,3.1-0.5,13,0,14.3c1.3,3.2,4.8,3.9,7.2,2.1c3.2-2.4,5.1-5.7,6.9-9.2")
+          path(d="M279.5,254.9c0,0,0.1,0,0.1,0c0.2,0,0.4,0.2,0.5,0.4c0,0.2-0.1,0.4-0.3,0.5c-0.2,0.1-0.4,0.1-0.6-0.2c-0.1-0.2-0.1-0.3,0-0.6 C279.2,255,279.3,254.9,279.5,254.9")
+          path(d="M332.2,261.4c-0.5,0.4-0.9,0.8-1.4,1.1c-5.6,3.6-12.1,2.9-16.4-1.7c-3.2-3.5-4.2-7.7-3.2-12.2c1.9-8.7,9.7-13.5,18-12.7 c4.7,0.4,8.5,2.5,11.3,6.3c1.9,2.5,2.8,5.5,3.6,8.5c1.4,5.5,1.7,11.1,1.9,16.7c0.1,3.4,0,6.8,0,10.2c0,1,0.2,2,0.9,2.8l0.4-0.1 c1-0.4,1.5-1.3,1.9-2.1c2.9-5.4,5.8-10.7,8.7-16.1c3.3-6.1,6.7-12.2,9.9-18.4c0.5-0.9,1-1.6,1.8-2l0.5-0.1c0.6,0.6,0.7,1.4,0.7,2.2 c-0.1,1.8-0.4,3.7-0.6,5.5c-0.4,3.4-0.7,6.7-0.8,10.1c-0.1,3.6,0.1,7.1,0.6,10.7c0.4,3,1,6,2.6,8.6c1.2,2,2.9,3.6,5.2,4.2 c3.7,0.9,7.1,0.3,10.3-1.9c3.9-2.6,6.6-6.3,8.7-10.3c2.1-3.9,3.6-8.1,4.8-12.4c1.8-6.4,2.7-13,1.9-19.7c-0.5-4-1.6-7.7-4.2-10.8")
+          path(d="M405,278.2c0.7-0.2,1.4-0.6,2-1c2.7-1.8,4.7-4,4.4-7.6c-0.1-1.4-1.4-2.7-2.8-2.8c-1.8-0.1-3,0.8-3.8,2.3c-2.1,3.6-1.4,7.2,0.5,10.5 c1.4,2.3,3.8,3,6.4,2.8c3.2-0.3,5.2-2.3,6.9-4.7c1.8-2.6,3.3-5.3,4.7-8.1c0.5-1,1-1.9,1.8-2.7c0.5-0.5,1-0.9,1.7-0.7")
+          path(d="M427,266.4c0.8,0.2,0.9,0.9,1.1,1.5c0.6,2.3,0.1,4.7-0.2,7c-0.1,0.9,0.1,1.8-0.3,2.7c-0.5,1.4-0.5,2.8,0.5,4 c0.2-0.1,0.3-0.1,0.4-0.1c1.5-0.9,1.9-2.5,2.6-3.8c1.7-3.1,3.3-6.2,5.9-8.6c0.7-0.7,1.6-1.2,2.5-0.9c1.1,0.4,1.7,1.3,1.8,2.5 c0.2,1.4-0.2,2.7-0.3,4.1c-0.1,2-0.3,4.1,0.7,6c0.6,1.1,1.4,1.5,2.5,1.6c1.7,0.1,3-0.6,4.2-1.7c2.4-2.2,3.9-5,5.4-7.8")
+
+        p.outro
+          | I'm a software engineer.
+
+        //- svg.logo(viewBox="0 0 192 64")
+        //-   path(fill="#CC0073" d="M83.7,65.7H64.6L52.1,17.5h-0.4L39.4,65.7H20.5L2.4-2h18.1L31,48.5h0.4L43.6-2h17.2l12.3,50.6h0.4L84-2h17.7 L83.7,65.7z")
+        //-   path(fill="#3610AF" d="M171.9,65.7 152.9,65.7 140.4,17.4 140,17.4 127.6,65.7 108.8,65.7 90.7,-2.1 108.8,-2.1 119.2,48.5 119.6,48.5 131.8,-2.1 149,-2.1 161.3,48.5 161.7,48.5 172.2,-2.1 189.9,-2.1z")
+
+        ul.contact
+          li.github
+            a(href="https://github.com/goweiwen" target="_blank")
+              svg.icon(viewBox="0 0 32 32")
+                path(fill="#45b29a" d="M16 0c-8.84 0-16 7.164-16 16 0 7.070 4.584 13.066 10.94 15.18 0.8 0.15 1.094-0.344 1.094-0.77 0-0.38-0.014-1.386-0.020-2.72-4.452 0.966-5.39-2.146-5.39-2.146-0.728-1.848-1.78-2.34-1.78-2.34-1.45-0.992 0.112-0.972 0.112-0.972 1.606 0.112 2.45 1.648 2.45 1.648 1.428 2.446 3.746 1.74 4.66 1.33 0.144-1.034 0.556-1.74 1.014-2.14-3.554-0.4-7.288-1.776-7.288-7.906 0-1.746 0.62-3.174 1.646-4.294-0.18-0.404-0.72-2.030 0.14-4.234 0 0 1.34-0.43 4.4 1.64 1.28-0.356 2.64-0.532 4-0.54 1.36 0.008 2.72 0.184 4 0.54 3.040-2.070 4.38-1.64 4.38-1.64 0.86 2.204 0.32 3.83 0.16 4.234 1.020 1.12 1.64 2.548 1.64 4.294 0 6.146-3.74 7.5-7.3 7.894 0.56 0.48 1.080 1.46 1.080 2.96 0 2.14-0.020 3.86-0.020 4.38 0 0.42 0.28 0.92 1.1 0.76 6.402-2.098 10.982-8.098 10.982-15.158 0-8.836-7.164-16-16-16z")
+
+          li.linkedin
+            a(href="https://linkedin.com/in/goweiwen" target="_blank")
+              svg.icon(viewbox="0 0 1792 1792")
+                path(fill="#45b29a" d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z")
+
+          li.email
+            a(href="mailto:weiwen@u.nus.edu" target="_blank")
+              svg.icon(viewBox="0 0 28 28")
+                path(fill="#45b29a" d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z")
+
+          li.phone
+            a(href="tel:+65-91252435" target="_blank")
+              svg.icon(viewBox="0 0 32 32")
+                path(fill="#45b29a" d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z")
+
     main.main
 
       header.header#header
         .me
           .face
             img(src="images/face.jpg" alt="Wei Wen, Goh" width="180" height="180")
-            ul.contact
-              li.github
-                a(href="https://github.com/goweiwen" target="_blank")
-                  svg.icon(viewBox="0 0 32 32")
-                    path(fill="#606264" d="M16 0c-8.84 0-16 7.164-16 16 0 7.070 4.584 13.066 10.94 15.18 0.8 0.15 1.094-0.344 1.094-0.77 0-0.38-0.014-1.386-0.020-2.72-4.452 0.966-5.39-2.146-5.39-2.146-0.728-1.848-1.78-2.34-1.78-2.34-1.45-0.992 0.112-0.972 0.112-0.972 1.606 0.112 2.45 1.648 2.45 1.648 1.428 2.446 3.746 1.74 4.66 1.33 0.144-1.034 0.556-1.74 1.014-2.14-3.554-0.4-7.288-1.776-7.288-7.906 0-1.746 0.62-3.174 1.646-4.294-0.18-0.404-0.72-2.030 0.14-4.234 0 0 1.34-0.43 4.4 1.64 1.28-0.356 2.64-0.532 4-0.54 1.36 0.008 2.72 0.184 4 0.54 3.040-2.070 4.38-1.64 4.38-1.64 0.86 2.204 0.32 3.83 0.16 4.234 1.020 1.12 1.64 2.548 1.64 4.294 0 6.146-3.74 7.5-7.3 7.894 0.56 0.48 1.080 1.46 1.080 2.96 0 2.14-0.020 3.86-0.020 4.38 0 0.42 0.28 0.92 1.1 0.76 6.402-2.098 10.982-8.098 10.982-15.158 0-8.836-7.164-16-16-16z")
-
-              li.linkedin
-                a(href="https://linkedin.com/in/goweiwen" target="_blank")
-                  svg.icon(viewbox="0 0 1792 1792")
-                    path(fill="#606264" d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z")
-
-              li.email
-                a(href="mailto:weiwen@u.nus.edu" target="_blank")
-                  svg.icon(viewBox="0 0 28 28")
-                    path(fill="#606264" d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z")
-
-              li.phone
-                a(href="tel:+65-91252435" target="_blank")
-                  svg.icon(viewBox="0 0 32 32")
-                    path(fill="#606264" d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z")
 
           .desc
+            h3
+              | Hi!
             p
-              | Hello, my name is #[strong Wei Wen, Goh].
-            p
-              | I'm currently a sophomore at the #[strong National University of Singapore], reading #[strong Computer Science].
+              | I'm a sophomore at the #[strong National University of Singapore], reading #[strong Computer Science].
               | I'll be graduating in May 2020 with specializations in #[strong Programming Languages] and #[strong Artificial Intelligence].
             p
               | My experience is primarily in #[strong front-end] and #[strong back-end web development], but I'm open to any software engineering or data science position.
@@ -172,6 +223,8 @@ html(lang="en")
             svg.icon(viewbox="0 0 32 32")
               path(fill="#ffffff" d="M23 14l-8 8-8-8h5v-12h6v12zM15 22h-15v8h30v-8h-15zM28 26h-4v-2h4v2z")
             | Download CV
+
+      hr
 
       section.education#education
         h2 Education
@@ -204,6 +257,8 @@ html(lang="en")
             ul.description
               li Diploma in Chemical Engineering. GPA: 3.67/4.00
               li Diploma-Plus Certificate in Engineering Mathematics and Science
+
+      hr
 
       section.experience#experience
         h2 Professional Experience
@@ -270,6 +325,8 @@ html(lang="en")
           //-   ul.description
           //-     li Managed the day to day operations of chemical plant over 12-hour shifts.
 
+      hr
+
       section.projects#projects
         h2 Projects
         p
@@ -326,6 +383,8 @@ html(lang="en")
         p
           | A more comprehensive list can be found #[a(href="https://goweiwen.me/projects") here].
 
+      hr
+
       section.awards#awards
         h2 Awards and Achievements
         p
@@ -364,6 +423,8 @@ html(lang="en")
             ul.description
               li Awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards work.
 
+      hr
+
       section.technologies#technologies
         h2 Preferred Technologies
         p
@@ -380,6 +441,8 @@ html(lang="en")
       //-     li Languages: English (native), Chinese (native), Japanese (conversational, JLPT N3)
       //-     li Hobbies: Leathercraft, Electronics, Drawing
 
+      hr
+
       section.contact#contact
         h2 Get in Touch!
         p Feel free to give me a call or drop me an email if you want to have a chat!
@@ -388,37 +451,37 @@ html(lang="en")
             a(href="mailto:weiwen@u.nus.edu" target="_blank")
               svg.icon(viewBox="0 0 28 28")
                 path(fill="#606264" d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z")
-              | goweiwen@gmail.com
+              span goweiwen@gmail.com
 
           li.phone
             a(href="tel:+65-91252435" target="_blank")
               svg.icon(viewBox="0 0 32 32")
                 path(fill="#606264" d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z")
-              | +65 91252435
+              span +65 91252435
 
           li.github
             a(href="https://github.com/goweiwen" target="_blank")
               svg.icon(viewBox="0 0 32 32")
                 path(fill="#606264" d="M16 0c-8.84 0-16 7.164-16 16 0 7.070 4.584 13.066 10.94 15.18 0.8 0.15 1.094-0.344 1.094-0.77 0-0.38-0.014-1.386-0.020-2.72-4.452 0.966-5.39-2.146-5.39-2.146-0.728-1.848-1.78-2.34-1.78-2.34-1.45-0.992 0.112-0.972 0.112-0.972 1.606 0.112 2.45 1.648 2.45 1.648 1.428 2.446 3.746 1.74 4.66 1.33 0.144-1.034 0.556-1.74 1.014-2.14-3.554-0.4-7.288-1.776-7.288-7.906 0-1.746 0.62-3.174 1.646-4.294-0.18-0.404-0.72-2.030 0.14-4.234 0 0 1.34-0.43 4.4 1.64 1.28-0.356 2.64-0.532 4-0.54 1.36 0.008 2.72 0.184 4 0.54 3.040-2.070 4.38-1.64 4.38-1.64 0.86 2.204 0.32 3.83 0.16 4.234 1.020 1.12 1.64 2.548 1.64 4.294 0 6.146-3.74 7.5-7.3 7.894 0.56 0.48 1.080 1.46 1.080 2.96 0 2.14-0.020 3.86-0.020 4.38 0 0.42 0.28 0.92 1.1 0.76 6.402-2.098 10.982-8.098 10.982-15.158 0-8.836-7.164-16-16-16z")
-              | github.com/goweiwen
+              span github.com/goweiwen
 
           li.linkedin
             a(href="https://linkedin.com/in/goweiwen" target="_blank")
               svg.icon(viewbox="0 0 1792 1792")
                 path(fill="#606264" d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z")
-              | linkedin.com/in/goweiwen
+              span linkedin.com/in/goweiwen
 
-          //- li.website
-          //-   a(href="https://goweiwen.me")
-          //-     svg.icon(viewBox="0 0 32 32")
-          //-       path(fill="#606264" d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 30c-1.967 0-3.84-0.407-5.538-1.139l7.286-8.197c0.163-0.183 0.253-0.419 0.253-0.664v-3c0-0.552-0.448-1-1-1-3.531 0-7.256-3.671-7.293-3.707-0.188-0.188-0.442-0.293-0.707-0.293h-4c-0.552 0-1 0.448-1 1v6c0 0.379 0.214 0.725 0.553 0.894l3.447 1.724v5.871c-3.627-2.53-6-6.732-6-11.489 0-2.147 0.484-4.181 1.348-6h3.652c0.265 0 0.52-0.105 0.707-0.293l4-4c0.188-0.188 0.293-0.442 0.293-0.707v-2.419c1.268-0.377 2.61-0.581 4-0.581 2.2 0 4.281 0.508 6.134 1.412-0.13 0.109-0.256 0.224-0.376 0.345-1.133 1.133-1.757 2.64-1.757 4.243s0.624 3.109 1.757 4.243c1.139 1.139 2.663 1.758 4.239 1.758 0.099 0 0.198-0.002 0.297-0.007 0.432 1.619 1.211 5.833-0.263 11.635-0.014 0.055-0.022 0.109-0.026 0.163-2.541 2.596-6.084 4.208-10.004 4.208z")
-          //-     | https://goweiwen.me
+          li.website
+            a(href="https://goweiwen.me")
+              svg.icon(viewBox="0 0 32 32")
+                path(fill="#606264" d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 30c-1.967 0-3.84-0.407-5.538-1.139l7.286-8.197c0.163-0.183 0.253-0.419 0.253-0.664v-3c0-0.552-0.448-1-1-1-3.531 0-7.256-3.671-7.293-3.707-0.188-0.188-0.442-0.293-0.707-0.293h-4c-0.552 0-1 0.448-1 1v6c0 0.379 0.214 0.725 0.553 0.894l3.447 1.724v5.871c-3.627-2.53-6-6.732-6-11.489 0-2.147 0.484-4.181 1.348-6h3.652c0.265 0 0.52-0.105 0.707-0.293l4-4c0.188-0.188 0.293-0.442 0.293-0.707v-2.419c1.268-0.377 2.61-0.581 4-0.581 2.2 0 4.281 0.508 6.134 1.412-0.13 0.109-0.256 0.224-0.376 0.345-1.133 1.133-1.757 2.64-1.757 4.243s0.624 3.109 1.757 4.243c1.139 1.139 2.663 1.758 4.239 1.758 0.099 0 0.198-0.002 0.297-0.007 0.432 1.619 1.211 5.833-0.263 11.635-0.014 0.055-0.022 0.109-0.026 0.163-2.541 2.596-6.084 4.208-10.004 4.208z")
+              span https://goweiwen.me
 
           //- li.address
           //-   span
           //-     svg.icon(viewBox="0 0 32 32")
           //-       path(fill="#606264" d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z")
-          //-     | Singapore
+          //-     span Singapore
 
         .download
           a.button(href="Wei_Wen_Goh.pdf" target="_blank")
@@ -449,14 +512,21 @@ html(lang="en")
       var navbar = document.querySelector('.navbar');
       var scrollPosition = window.pageYOffset;
       function handleNavbarVisibility() {
+        if (window.pageYOffset < 32) {
+          navbar.classList.add('is-transparent');
+        } else {
+          navbar.classList.remove('is-transparent');
+        }
         if (scrollPosition >= window.pageYOffset) {
           navbar.classList.remove('is-hidden');
         } else {
           navbar.classList.add('is-hidden');
+          links.classList.remove('is-visible');
         }
         scrollPosition = window.pageYOffset;
       }
       window.addEventListener('scroll', handleNavbarVisibility);
+      handleNavbarVisibility();
 
       // Scroll Animation
       var nodeList = document.querySelectorAll('main > *:not(.appear)');
@@ -474,3 +544,6 @@ html(lang="en")
       }
       window.addEventListener('scroll', handleAppearAnimation);
       handleAppearAnimation();
+
+      // SVG Animation
+      new Vivus('logo', { duration: 200, type: 'oneByOne' });

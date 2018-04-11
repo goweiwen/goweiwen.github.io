@@ -127,7 +127,8 @@ html(lang="en")
         .projects > ul > li { margin-left: 40px; min-height: 40px; }
       }
 
-      .appear { animation: appear 1s; }
+      main > .not-appear { opacity: 0; }
+      main > :not(.not-appear) { animation: appear 1s; }
       @keyframes appear {
           from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0px); }
@@ -490,60 +491,65 @@ html(lang="en")
             | Download CV
 
     script.
-      // Hamburger
-      var links = document.querySelector('.links');
-      document.querySelector('.hamburger').addEventListener('click', function(e) {
-        e.preventDefault()
-        links.classList.toggle('is-visible');
-      });
-
-      // Links
-      document.querySelectorAll('.navbar .link').forEach(function(el) {
-        var target = document.querySelector(el.getAttribute('href'));
-        var y = target.offsetTop - 96;
-        el.addEventListener('click', function(e) {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Hamburger
+        var links = document.querySelector('.links');
+        document.querySelector('.hamburger').addEventListener('click', function(e) {
           e.preventDefault()
-          window.scrollTo({ top: y, behavior: 'smooth' });
-          links.classList.remove('is-visible');
-        })
-      });
+          links.classList.toggle('is-visible');
+        });
 
-      // Navbar visibility
-      var navbar = document.querySelector('.navbar');
-      var scrollPosition = window.pageYOffset;
-      function handleNavbarVisibility() {
-        if (window.pageYOffset < 32) {
-          navbar.classList.add('is-transparent');
-        } else {
-          navbar.classList.remove('is-transparent');
-        }
-        if (scrollPosition >= window.pageYOffset) {
-          navbar.classList.remove('is-hidden');
-        } else {
-          navbar.classList.add('is-hidden');
-          links.classList.remove('is-visible');
-        }
-        scrollPosition = window.pageYOffset;
-      }
-      window.addEventListener('scroll', handleNavbarVisibility);
-      handleNavbarVisibility();
+        // Links
+        document.querySelectorAll('.navbar .link').forEach(function(el) {
+          var target = document.querySelector(el.getAttribute('href'));
+          var y = target.offsetTop - 96;
+          el.addEventListener('click', function(e) {
+            e.preventDefault()
+            window.scrollTo({ top: y, behavior: 'smooth' });
+            links.classList.remove('is-visible');
+          })
+        });
 
-      // Scroll Animation
-      var nodeList = document.querySelectorAll('main > *:not(.appear)');
-      function handleAppearAnimation() {
-        nodeList.forEach(function(el) {
-          if (el.offsetTop <= window.pageYOffset + window.innerHeight &&
-              el.offsetTop + el.offsetHeight > window.pageYOffset) {
-            nodeList = document.querySelectorAll('main > *:not(.appear)');
-            el.classList.add('appear');
+        // Navbar visibility
+        var navbar = document.querySelector('.navbar');
+        var scrollPosition = window.pageYOffset;
+        function handleNavbarVisibility() {
+          if (window.pageYOffset < 32) {
+            navbar.classList.add('is-transparent');
+          } else {
+            navbar.classList.remove('is-transparent');
           }
-        })
-        if (nodeList.length === 0) {
-          window.removeEventListener('scroll', handleAppearAnimation);
+          if (scrollPosition >= window.pageYOffset) {
+            navbar.classList.remove('is-hidden');
+          } else {
+            navbar.classList.add('is-hidden');
+            links.classList.remove('is-visible');
+          }
+          scrollPosition = window.pageYOffset;
         }
-      }
-      window.addEventListener('scroll', handleAppearAnimation);
-      handleAppearAnimation();
+        window.addEventListener('scroll', handleNavbarVisibility);
+        handleNavbarVisibility();
 
-      // SVG Animation
-      new Vivus('logo', { duration: 200, type: 'oneByOne' });
+        // Scroll Animation
+        document.querySelectorAll('main > *').forEach(function(el) {
+          el.classList.add('not-appear');
+        })
+        var nodeList = document.querySelectorAll('main > .not-appear');
+        function handleAppearAnimation() {
+          nodeList.forEach(function(el) {
+            if (el.offsetTop <= window.pageYOffset + window.innerHeight &&
+                el.offsetTop + el.offsetHeight > window.pageYOffset) {
+              nodeList = document.querySelectorAll('main > .not-appear');
+              el.classList.remove('not-appear');
+            }
+          })
+          if (nodeList.length === 0) {
+            window.removeEventListener('scroll', handleAppearAnimation);
+          }
+        }
+        window.addEventListener('scroll', handleAppearAnimation);
+        handleAppearAnimation();
+
+        // SVG Animation
+        new Vivus('logo', { duration: 200, type: 'oneByOne' });
+      })

@@ -7,7 +7,7 @@ html(lang="en")
     link(href="css/normalize.css" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Arimo:400,700|Cinzel:700" rel="stylesheet")
     style.
-      body { background: #fff; font-family: 'Arimo', sans-serif; line-height: 1.3em; }
+      body { background: #fff; font-family: 'Arimo', sans-serif; line-height: 1.4em; }
       main { background: #fff; max-width: 960px; margin: auto; padding: 3em; }
       header, section { max-width: 960px; }
       h1, h2, h3, .navbar { font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700; margin: 0; color: #396; }
@@ -61,18 +61,18 @@ html(lang="en")
       section ul li { position: relative; margin: 0.3em 0; }
       section ul li:last-child { margin-bottom: 0; }
 
-      /* Education, Experience */
-      section header { display: flex; margin: 1em 0 0.3em 0; }
-      section .company { flex: initial }
-      section .title { flex: initial; }
-      section .date { flex: auto; text-align: right; }
+      /* Education, Experience, Projects */
+      .education header, .experience header, .projects header { display: block; margin: 3em 0 0.8em 0; }
+      .education .school, .experience .company, .projects .title { display: block; font-size: 1.3em; margin-bottom: 0.3em; }
+      .experience .title { display: inline-block; font-size: 1em; }
+      .education .date, .experience .date, .projects .date { display: inline-block; }
+      .experience .title + .date::before, .awards .award::after, .awards .title::after { content: ', '; }
+      .awards header { margin: 1em 0 0.3em 0; }
+      .education .logo, .experience .logo, .projects .logo { position: absolute; left: -160px; top: 0; width: 128px; height: 128px; }
+      .education > ul > li, .experience > ul > li, .projects > ul > li { margin-left: 160px; min-height: 160px; }
 
       section ul.description { list-style: disc; }
       section ul.description li { margin: 0 0 0 1.5em ; }
-
-      /* Projects */
-      .projects .logo { position: absolute; left: -80px; top: 0; width: 64px; height: 64px; }
-      .projects li { margin-left: 80px; }
 
       /* Languages, Interests */
       .languages ul, .interests ul { margin: 8px 0; list-style: none; }
@@ -88,8 +88,14 @@ html(lang="en")
         section header { flex-direction: column; }
         section .date { text-align: left; }
 
+        .education .logo, .experience .logo { display: none; }
+        .education > ul > li, .experience > ul > li { margin-left: 0; }
+        .experience .title { display: block; }
+        .education .date, .experience .date, .projects .date { display: block; }
+        .experience .title + .date::before { content: ''; }
+
         .projects .logo { left: -40px; width: 32px; height: 32px; }
-        .projects li { margin-left: 40px; }
+        .projects > ul > li { margin-left: 40px; min-height: 40px; }
       }
 
       .appear { animation: appear 1s; }
@@ -97,6 +103,14 @@ html(lang="en")
           from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0px); }
       }
+
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-92938412-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-92938412-1');
+
   body
 
     nav.navbar
@@ -165,9 +179,10 @@ html(lang="en")
           | Here's a peek into my formal education so far:
         ul
           li
+            img.logo(src="images/nus.png" alt="National University of Singapore")
             header
-              strong.company National University of Singapore 
-              span.date Aug 2016 - Present
+              strong.school National University of Singapore
+              span.date Aug 2016 – Present
             ul.description
               li Bachelor of Computing in Computer Science. GPA: 4.70/5.00 (First Class Honours)
               li Tutor for CS2103 Software Engineering (Spring 2018)
@@ -182,9 +197,10 @@ html(lang="en")
               //- li Advisor for NUS Orbital 2018
 
           li
+            img.logo(src="images/sp.png" alt="Singapore Polytechic")
             header
-              strong.company Singapore Polytechnic 
-              span.date Apr 2011 - Apr 2014
+              strong.school Singapore Polytechnic
+              span.date Apr 2011 – Apr 2014
             ul.description
               li Diploma in Chemical Engineering. GPA: 3.67/4.00
               li Diploma-Plus Certificate in Engineering Mathematics and Science
@@ -195,46 +211,51 @@ html(lang="en")
           | I've been programming professionally for a bit:
         ul
           //- li
+          //-   img.logo(src="images/sea.png" alt="Sea Group")
           //-   header
           //-     strong.company Sea Group
-          //-     em.title Software Engineer Intern 
-          //-     span.date May 2018 - Jul 2018
+          //-     em.title Software Engineer Intern
+          //-     span.date May 2018 – Jul 2018
           //-   ul.description
           //-     li Garena Labs
 
           li
+            img.logo(src="images/govtech.png" alt="GovTech")
             header
-              strong.company Government Technology Agency of Singapore (GovTech), 
-              em.title Data Engineer Intern 
-              span.date Dec 2017 - Jan 2018
+              strong.company Government Technology Agency of Singapore (GovTech)
+              em.title Data Engineer Intern
+              span.date Dec 2017 – Jan 2018
             ul.description
               li Implemented and released public APIs for Data.gov.sg portal using Node.js with AWS Lambda and DynamoDB.
               li Minimized AWS Lambda costs by benchmarking, profiling and optimizing slow-running Node.js scripts.
               li Developed and deployed SMS-based medicine reminder solution targeted at middle-aged users.
 
           li
+            img.logo(src="images/ethereum.png" alt="Ethereum Tech")
             header
-              strong.company Ethereum Tech, 
-              em.title Freelance Web Developer 
-              span.date Oct 2017 - Dec 2017
+              strong.company Ethereum Tech
+              em.title Freelance Web Developer
+              span.date Oct 2017 – Dec 2017
             ul.description
               li Created the front-end of a cryptocurrency mining analytics dashboard with Vue.js.
               li Suggested and implemented improvements to user experience from client's original design.
 
           li
+            img.logo(src="images/mindef.png" alt="Ministry of Defence (Singapore)")
             header
-              strong.company Ministry of Defence (Singapore), 
-              em.title Personnel Systems Analyst 
-              span.date Dec 2014 - Aug 2016
+              strong.company Ministry of Defence (Singapore)
+              em.title Personnel Systems Analyst
+              span.date Dec 2014 – Aug 2016
             ul.description
               li Simulated and analysed personnel movement using complex system dynamics simulations.
               li Wrote VBA macros and SQL queries for Microsoft Access, Excel and Word.
 
           li
+            img.logo(src="images/alpha.png" alt="Alpha Consulting Engineers Private Limited")
             header
-              strong.company Alpha Consulting Engineers Private Limited, 
-              em.title System Administrator 
-              span.date Mar 2014 - Jul 2014
+              strong.company Alpha Consulting Engineers Private Limited
+              em.title System Administrator
+              span.date Mar 2014 – Jul 2014
             ul.description
               li Administered Windows servers and clients using IIS and Active Directory.
               li Redesigned homepage using HTML5, CSS and JavaScript.
@@ -244,8 +265,8 @@ html(lang="en")
           //- li
           //-   header
           //-     span.title Technician Trainee
-          //-     span.company Chemical Process Technology Centre 
-          //-     span.date Feb 2013 - Apr 2013
+          //-     span.company Chemical Process Technology Centre
+          //-     span.date Feb 2013 – Apr 2013
           //-   ul.description
           //-     li Managed the day to day operations of chemical plant over 12-hour shifts.
 
@@ -257,32 +278,36 @@ html(lang="en")
           li
             img.logo(src="images/pear.png" alt="Pear")
             header
-              strong.title Pear 
-              span.date Oct 2017 - Nov 2017
+              strong.title Pear
+              span.date Oct 2017 – Nov 2017
             ul.description
               li Progressive Web App (PWA), iOS and Android app where users matchmake their friends.
               li.no-print Pear won 2nd prize in NUS's 11th School of Computing Term Project Showcase (STePS).
               li Led front-end development using Vue.js and Cordova.
               li Released app to iOS App Store and Google Play Store, hit 300 users within 24 hours.
-              li Source: #[a(href="https://github.com/Pear-App/pear-client") github.com/Pear-App/pear-client], Info: #[a(href="http://isteps.comp.nus.edu.sg/event/11th-steps/module/CS3216/project/1") 11th STePS submission]
+              li Source: #[a(href="https://github.com/Pear-App/pear-client") github.com/Pear-App/pear-client], Description: #[a(href="http://isteps.comp.nus.edu.sg/event/11th-steps/module/CS3216/project/1") 11th STePS submission]
+              li Video: #[a(href="https://youtu.be/Tv90y_wW7hw") youtu.be/Tv90y_wW7hw]
+            //- .video
+            //-   iframe(width="900" height="506" src="https://www.youtube.com/embed/Tv90y_wW7hw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
 
           li
             img.logo(src="images/collaborate.png" alt="collaborate!")
             header
-              strong.title collaborate! 
-              span.date Jun 2017 - Aug 2017
+              strong.title collaborate!
+              span.date Jun 2017 – Aug 2017
             ul.description
               li Real-time collaborative webapp that simulates a table top discussion.
               li.no-print collaborate! won honorable mention in the advanced category of NUS School of Computing's Orbital 2017.
               li Led front-end development using React + Redux and Socket.io.
               li Wrote and deployed back-end using Node.js and Koa.
               li Source: #[a(href="https://github.com/goweiwen/collaborate") github.com/goweiwen/collaborate], Demo: #[a(href="https://collaborate-app.herokuapp.com") collaborate-app.herokuapp.com]
+              li Video: #[a(href="https://youtu.be/7TeuZ-MRs1k") youtu.be/7TeuZ-MRs1k]
 
           li
             img.logo(src="images/vue.png" alt="vue-swing")
             header
-              strong.title vue-swing 
-              span.date Oct 2017 - Present
+              strong.title vue-swing
+              span.date Oct 2017  Present
             ul.description
               li Vue.js component for swiping cards left and right, as seen in apps like Jelly and Tinder.
               li Published on NPM and actively maintained.
@@ -291,8 +316,8 @@ html(lang="en")
           li
             img.logo(src="images/ivle-sync.png" alt="ivle-sync")
             header
-              strong.title ivle-sync 
-              span.date Aug 2016 - Present
+              strong.title ivle-sync
+              span.date Aug 2016 – Present
             ul.description
               li Automatically downloads files, announcements and webcasts from NUS's IVLE portal.
               li Created and maintained application built in Python 3.
@@ -308,33 +333,33 @@ html(lang="en")
         ul
           li
             header
-              strong.title Yale-NUS Data 2.0 Datathon, 
-              em.title First Place 
+              strong.award Yale-NUS Data 2.0 Datathon
+              em.title First Place
               span.date Mar 2018
             ul.description
               li Studied viability of ride sharing in Singapore compared to public transport regarding carbon emissions using R.
           li
             header
-              strong.title NUS 11th School of Computing Term Project Showcase (11th STePS), 
+              strong.award NUS 11th School of Computing Term Project Showcase (11th STePS)
               em.title Second Place
               span.date Nov 2017
             ul.description
               li Pear won 2nd prize in NUS's 11th STePS for CS3216 Software Product Engineering for Digital Markets.
           li
             header
-              strong.title NUS Orbital Programme 2017 (Apollo 11), 
-              em.title Honorable Mention 
+              strong.award NUS Orbital Programme 2017 (Apollo 11)
+              em.title Honorable Mention
               span.date Sep 2017
             ul.description
               li collaborate! won an honorable mention in the advanced category of NUS School of Computing's Orbital 2017.
           li
             header
-              strong.title FOSSASIA 2017 Microsoft Mission Mars Challenge, 
-              em.title Second Prize 
+              strong.award FOSSASIA 2017 Microsoft Mission Mars Challenge
+              em.title Second Prize
               span.date Mar 2017
           li
             header
-              strong.title DMG Excellence Award (Individual) 
+              strong.award DMG Excellence Award (Individual)
               span.date Mar 2016
             ul.description
               li Awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards work.

@@ -19,8 +19,9 @@ html(lang="en")
 
       /* Navbar */
       main { margin-top: 3em; }
-      .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1; height: 3em; background-color: #fff; box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
-      .navbar .links { list-style: none; padding: 0; margin: 0; text-align: center; background-color: #fff; }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1; height: 3em; background-color: rgba(255,255,255,0.95); box-shadow: rgba(0,0,0,0.1) 0 2px 5px; }
+      .navbar.is-hidden { transform: translateY(-110%); }
+      .navbar .links { list-style: none; padding: 0; margin: 0; text-align: center; }
       .navbar .links li { display: inline-block; margin: 1em 0.5em 0 0.5em; height: 2em; text-transform: uppercase; }
       .navbar .links li a.link { color: #606264; text-decoration: none; padding: calc(1em - 6px); }
       .navbar .links li a:hover { border-bottom: 3px solid #339966; }
@@ -144,7 +145,7 @@ html(lang="en")
               | Hello, my name is #[strong Wei Wen, Goh].
             p
               | I'm currently a sophomore at the #[strong National University of Singapore], reading #[strong Computer Science].
-              | I'll be specializing in #[strong Programming Languages] and #[strong Artificial Intelligence].
+              | I'll be graduating in May 2020 with specializations in #[strong Programming Languages] and #[strong Artificial Intelligence].
             p
               | My experience is primarily in #[strong front-end] and #[strong back-end web development], but I'm open to any software engineering or data science position.
 
@@ -406,6 +407,7 @@ html(lang="en")
         e.preventDefault()
         links.classList.toggle('is-visible');
       });
+
       // Links
       document.querySelectorAll('.navbar .link').forEach(function(el) {
         var target = document.querySelector(el.getAttribute('href'));
@@ -416,9 +418,23 @@ html(lang="en")
           links.classList.remove('is-visible');
         })
       });
+
+      // Navbar visibility
+      var navbar = document.querySelector('.navbar');
+      var scrollPosition = window.pageYOffset;
+      function handleNavbarVisibility() {
+        if (scrollPosition >= window.pageYOffset) {
+          navbar.classList.remove('is-hidden');
+        } else {
+          navbar.classList.add('is-hidden');
+        }
+      }
+      window.addEventListener('scroll', handleNavbarVisibility);
+
       // Scroll Animation
       var nodeList = document.querySelectorAll('main > *:not(.appear)');
-      function handleScroll() {
+      function handleAppearAnimation() {
+        scrollPosition = window.pageYOffset;
         nodeList.forEach(function(el) {
           if (el.offsetTop <= window.pageYOffset + window.innerHeight &&
               el.offsetTop + el.offsetHeight > window.pageYOffset) {
@@ -427,8 +443,8 @@ html(lang="en")
           }
         })
         if (nodeList.length === 0) {
-          window.removeEventListener('scroll', handleScroll);
+          window.removeEventListener('scroll', handleAppearAnimation);
         }
       }
-      window.addEventListener('scroll', handleScroll);
-      handleScroll();
+      window.addEventListener('scroll', handleAppearAnimation);
+      handleAppearAnimation();

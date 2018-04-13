@@ -136,7 +136,7 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: url(../images/concrete-texture.png);
+  background: url(../images/concrete-texture.jpg);
   box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.1);
 }
 .hero .wrapper {

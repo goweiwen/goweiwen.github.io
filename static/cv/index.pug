@@ -266,14 +266,13 @@ html(lang="en")
         p
           | I've been programming professionally for a bit:
         ul
-          //- li
-          //-   img.logo(src="images/sea.png" alt="Sea Group")
-          //-   header
-          //-     strong.company Sea Group
-          //-     em.title Software Engineer Intern
-          //-     span.date May 2018 – Jul 2018
-          //-   ul.description
-          //-     li Garena Labs
+          li
+            img.logo(src="images/sea.png" alt="Sea Group")
+            header
+              strong.company Sea Group
+              em.title Incoming Software Engineer Intern
+              span.date Starting May 2018
+            ul.description
 
           li
             img.logo(src="images/govtech.png" alt="GovTech")
@@ -283,8 +282,20 @@ html(lang="en")
               span.date Dec 2017 – Jan 2018
             ul.description
               li Implemented and released public APIs for Data.gov.sg portal using Node.js with AWS Lambda and DynamoDB.
+              li Designed a unifying schema of several different formats for archival using DynamoDB.
+              li Wrote serverless Node.js functions to scrape and verify JSON, then uploading to DynamoDB.
               li Minimized AWS Lambda costs by benchmarking, profiling and optimizing slow-running Node.js scripts.
               li Developed and deployed SMS-based medicine reminder solution targeted at middle-aged users.
+            .takeaways
+              strong Takeaways:
+              p
+                | While building the public API, I learnt the importance of API response latencies and how we can cache
+                | some responses to reduce the latencies and cost of running the functions. This was also my first time
+                | using serverless functions, which taught me how stateless functions can reduce the complexity of our
+                | applications.
+              p
+                | Benchmarking and profiling the Node.js scripts taught me how the V8 JavaScript engine works in detail,
+                | such as how it manages memory and its garbage collection strategies.
 
           li
             img.logo(src="images/ethereum.png" alt="Ethereum Tech")
@@ -294,7 +305,15 @@ html(lang="en")
               span.date Oct 2017 – Dec 2017
             ul.description
               li Created the front-end of a cryptocurrency mining analytics dashboard with Vue.js.
+              li Helped client visualize health of their miners and troubleshoot malfunctioning machines.
               li Suggested and implemented improvements to user experience from client's original design.
+            .takeaways
+              strong Takeaways: #[br]
+              p
+                | This was my first commissioned project where we had to start from scratch and produce a high-quality
+                | maintainable code base. As the customer was not very sure what he wanted, we had to interpret his needs
+                | and suggest possible improvements. The constant feedback process helped us better understand the clients
+                | needs and resulted in a product with good user experience.
 
           li
             img.logo(src="images/mindef.png" alt="Ministry of Defence (Singapore)")
@@ -305,6 +324,13 @@ html(lang="en")
             ul.description
               li Simulated and analysed personnel movement using complex system dynamics simulations.
               li Wrote VBA macros and SQL queries for Microsoft Access, Excel and Word.
+            .takeaways
+              strong Takeaways: #[br]
+              p
+                | As we worked with a lot of badly formatted historical data, I learnt how to process data into readable
+                | forms. It was my first data analysis job, and I learnt a lot of simulation techniques as well as methods
+                | to verify our models. I also learnt how to properly present data for visualization, as I needed to explain
+                | what the model was doing and what we could learn from it.
 
           li
             img.logo(src="images/alpha.png" alt="Alpha Consulting Engineers Private Limited")
@@ -317,6 +343,15 @@ html(lang="en")
               li Redesigned homepage using HTML5, CSS and JavaScript.
               li Implemented features in the intranet page using jQuery, PHP and MariaDB/MySQL.
               li Decompiled and modified legacy JavaServer Pages application.
+            .takeaways
+              strong Takeaways: #[br]
+              p
+                | This was my first programming related job. I learnt how to work with servers through SSH and RDP. While
+                | there, I also did some web development for the intranet and public websites of the company.
+              p
+                | I also worked with legacy code where the source files were lost. Since it was a JavaServer Pages application,
+                | I managed to decompile the class files to understand what was happening and used a hex editor to change some
+                | values.
 
           //- li
           //-   header
@@ -370,6 +405,16 @@ html(lang="en")
               li Vue.js component for swiping cards left and right, as seen in apps like Jelly and Tinder.
               li Published on NPM and actively maintained.
               li Source: #[a(href="https://github.com/goweiwen/vue-swing") github.com/goweiwen/vue-swing]
+
+          li
+            img.logo(src="images/pixelect.png" alt="Pixelect")
+            header
+              strong.title Pixelect
+              span.date Aug 2017 - Sep 2017
+            ul.description
+              li Group photo sharing webapp for users to quickly share and vote on photos taken in a group outing with friends.
+              li Designed and wrote front-end using Vue.js.
+              li Source: #[a(href="https://github.com/anaprimawaty/pixelect") github.com/anaprimawaty/pixelect]
 
           li
             img.logo(src="images/ivle-sync.png" alt="ivle-sync")

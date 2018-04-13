@@ -3,6 +3,6 @@
     "pug": "^2.0.3"
   },
   "scripts": {
-    "build": "parcel build --out-dir .. index.pug"
+    "build": "parcel build --out-dir .. --public-url ./ index.pug"
   }
 }

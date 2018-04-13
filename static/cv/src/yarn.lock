@@ -301,6 +301,10 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
+smoothscroll-polyfill@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.3.tgz#94e5f2d604efcceb53f23ff0380d7ea7280d4bff"
+
 source-map@0.5.x, source-map@~0.5.1:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
@@ -325,6 +329,10 @@ uglify-js@^2.6.1:
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
+
+vivus@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/vivus/-/vivus-0.4.3.tgz#d7cd1b8b9053756b21cdc5731f2308510c5f0557"
 
 void-elements@^2.0.1:
   version "2.0.1"

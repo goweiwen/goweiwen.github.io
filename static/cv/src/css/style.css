@@ -1,7 +1,7 @@
 body {
   background: #fff;
   font-family: 'Arimo', sans-serif;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 main {
   background: #fff;
@@ -18,7 +18,7 @@ h2,
 h3,
 .navbar {
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   color: #1e836c;
   line-height: 1.2em;
 }
@@ -74,6 +74,10 @@ main {
   display: inline-block;
   margin: 1em 0.5em 0 0.5em;
   height: 2em;
+  transition: transform 0.2s;
+}
+.navbar .links li:hover {
+  transform: translateY(-1px);
 }
 .navbar .links li a.link {
   color: #45b29a;
@@ -81,6 +85,10 @@ main {
   padding: calc(1em - 6px);
 }
 .navbar .links li a:hover {
+  color: #1e836c;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar:not(.navbar.is-transparent) .links li a.is-active {
   color: #1e836c;
   border-bottom: 3px solid #1e836c;
 }
@@ -101,6 +109,22 @@ main {
     visibility: hidden;
     opacity: 0;
     background: #fff;
+  }
+  .navbar .links li {
+    display: block;
+    margin: 0.2em 0;
+    width: 100vw;
+  }
+  .navbar .links .link {
+    display: block;
+  }
+  .navbar .links li:hover {
+    transform: none;
+  }
+  .navbar:not(.navbar.is-transparent) .links li a.is-active {
+    border-bottom: none;
+    background: #45b29a;
+    color: #fff;
   }
   .navbar .hamburger {
     cursor: pointer;
@@ -124,9 +148,8 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   .navbar.is-transparent .links.is-visible {
-    left: 5vw;
-    width: 90vw;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: url('../images/concrete-texture.jpg');
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -149,10 +172,28 @@ main {
   margin: 1.5em 0;
 }
 .hero .intro {
-  animation: intro 0.4s;
+  animation: intro 0.5s;
 }
-.hero .outro {
-  animation: outro 4s;
+.hero .outro,
+.hero .contact {
+  transition: all 0.5s;
+}
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .outro.is-hidden,
+.hero .contact.is-hidden {
+  transition: none;
+  opacity: 0;
+  visibility: hidden;
 }
 .hero .logo {
   width: 50vw;
@@ -197,29 +238,6 @@ main {
 }
 .hero .contact li .icon:hover path {
   fill: #1e836c;
-}
-@keyframes intro {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes outro {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Header */
@@ -431,19 +449,14 @@ section ul.description li {
   }
 }
 
-main > .not-appear {
+main > * {
+  transition: opacity 1.5s, transform 1.5s;
+}
+main > .is-hidden {
   opacity: 0;
+  transform: translateY(30px);
 }
-main > :not(.not-appear) {
-  animation: appear 1s;
-}
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+main > :not(.is-hidden) {
+  opacity: 1;
+  transform: translateY(0px);
 }

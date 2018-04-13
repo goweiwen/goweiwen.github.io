@@ -88,7 +88,7 @@ main {
   color: #1e836c;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.navbar:not(.navbar.is-transparent) .links li a.is-active {
+.navbar:not(.is-transparent) .links .link.is-active {
   color: #1e836c;
   border-bottom: 3px solid #1e836c;
 }
@@ -418,12 +418,9 @@ section ul.description li {
     text-align: left;
   }
 
-  .education .logo,
-  .experience .logo {
-    display: none;
-  }
   .education > ul > li,
-  .experience > ul > li {
+  .experience > ul > li,
+  .projects > ul > li {
     margin-left: 0;
   }
   .experience .title {
@@ -438,14 +435,18 @@ section ul.description li {
     content: '';
   }
 
+  .education .logo,
+  .experience .logo,
   .projects .logo {
-    left: -40px;
-    width: 32px;
-    height: 32px;
+    left: 0px;
+    width: 64px;
+    height: 64px;
   }
-  .projects > ul > li {
-    margin-left: 40px;
-    min-height: 40px;
+  .education header,
+  .experience header,
+  .projects header {
+    margin-left: 80px;
+    min-height: 80px;
   }
 }
 
@@ -459,4 +460,63 @@ main > .is-hidden {
 main > :not(.is-hidden) {
   opacity: 1;
   transform: translateY(0px);
+}
+
+.projects .video {
+  width: 640px;
+  height: 360px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+.projects .video iframe {
+  width: 100%;
+  height: 100%;
+}
+.projects .images {
+  max-width: 640px;
+  width: 100%;
+  height: auto;
+}
+.projects .images img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 920px) {
+  .projects .images {
+    max-width: 480px;
+    margin: auto;
+  }
+  .projects .video {
+    width: 480px;
+    height: 270px;
+    margin: auto;
+  }
+}
+@media (max-width: 520px) {
+  .projects .images {
+    max-width: 320px;
+    margin: auto;
+  }
+  .projects .video {
+    width: 320px;
+    height: 180px;
+    margin: auto;
+  }
+}
+@media (max-width: 340px) {
+  .projects .images {
+    max-width: 240px;
+    margin: auto;
+  }
+  .projects .video {
+    width: 240px;
+    height: 135px;
+    margin: auto;
+  }
+}
+@media (max-width: 260px) {
+  .projects .video {
+    display: none;
+  }
 }

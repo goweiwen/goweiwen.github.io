@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ) {
         if (el !== elInView) {
           el.classList.add('is-active');
+          console.log(el);
           elInView && elInView.classList.remove('is-active');
           elInView = el;
         }

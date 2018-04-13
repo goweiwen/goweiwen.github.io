@@ -385,6 +385,14 @@ section ul.description li {
 }
 
 /* Languages, Interests */
+.columns {
+  display: flex;
+  flex-flow: row wrap;
+}
+.columns ul {
+  margin: 1em auto 1em 0;
+  min-width: 160px;
+}
 .languages ul,
 .interests ul {
   margin: 8px 0;

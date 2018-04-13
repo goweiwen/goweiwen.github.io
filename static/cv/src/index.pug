@@ -37,6 +37,7 @@ html(lang="en")
         li #[a.link(href="#education") Education]
         li #[a.link(href="#projects") Projects]
         li #[a.link(href="#awards") Awards]
+        li #[a.link(href="#skills") Skills]
         li #[a.link(href="#contact") Contact]
 
     .hero
@@ -106,7 +107,7 @@ html(lang="en")
       hr
 
       section.experience#experience
-        h2 Professional Experience
+        h2 Experience
         p
           | I've been programming professionally for a bit:
         ul
@@ -354,13 +355,52 @@ html(lang="en")
 
       hr
 
-      section.technologies#technologies
-        h2 Preferred Technologies
+      section.skills#skills
+        h2 Skills
         p
           | Here are some languages I'm confident in working professionally with:
-        ul.languages
-          li #[strong Languages:] Python, JavaScript, HTML/CSS, Haskell, Golang, Kotlin, Scala, Java, PHP, SQL
-          li #[strong Technologies:] Vue.js, React.js, Angular, jQuery, Elm, Node.js, Django, Laravel, Keras, TensorFlow
+        //- ul.languages
+        //-   li #[strong Languages:] Python, JavaScript, HTML/CSS, Haskell, Golang, Kotlin, Scala, Java, PHP, SQL
+        //-   li #[strong Technologies:] Vue.js, React.js, Angular, jQuery, Elm, Node.js, Django, Laravel, Keras, TensorFlow
+        .columns
+          ul.languages
+            li #[strong Languages:]
+            li Python
+            li JavaScript
+            li HTML/CSS
+            li Haskell
+            li Golang
+            li Kotlin
+            li Scala
+            li Ruby
+            li Java
+            li PHP
+            li SQL
+          ul.frontend
+            li #[strong Front-end:]
+            li Vue.js
+            li React.js
+            li Elm
+            li Angular
+            li jQuery
+            li Vanilla JS
+          ul.backend
+            li #[strong Back-end:]
+            li Node.js
+            li Express/Koa
+            li Django
+            li Flask
+            li Golang
+            li Ruby on Rails
+            li Laravel
+            li PHP
+          ul.data
+            li #[strong Data Science:]
+            li NumPy
+            li Pandas
+            li R
+            li Keras
+            li TensorFlow
         p
           | I'm a huge fan of trying out new technologies, so even if it isn't listed here, I might have used it for a pet project before.
 

@@ -4,5 +4,9 @@
   },
   "scripts": {
     "build": "parcel build --out-dir .. --public-url ./ index.pug"
+  },
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.3",
+    "vivus": "^0.4.3"
   }
 }

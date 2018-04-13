@@ -360,6 +360,7 @@ section ul li:last-child {
 
 section ul.description {
   list-style: disc;
+  margin-bottom: 1em;
 }
 section ul.description li {
   margin: 0 0 0 1.5em;

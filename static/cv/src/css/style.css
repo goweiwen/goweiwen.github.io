@@ -485,10 +485,14 @@ main > :not(.is-hidden) {
   max-width: 640px;
   width: 100%;
   height: auto;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 .projects .images img {
   width: 100%;
   height: auto;
+  display: block;
 }
 @media (max-width: 920px) {
   .projects .images {

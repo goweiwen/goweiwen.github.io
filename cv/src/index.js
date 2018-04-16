@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       window.scrollTo({ top: target.offsetTop - 96, behavior: 'smooth' });
       links.classList.remove('is-visible');
-      ga('send', 'event', 'click', 'navigate', el.getAttribute('href'));
+      ga('send', 'event', 'click', 'navigate', target.id);
     });
   });
 

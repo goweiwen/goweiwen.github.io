@@ -14,10 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const navbarLinks = document.querySelectorAll('.navbar .link');
   navbarLinks.forEach(el => {
     const target = document.querySelector(el.getAttribute('href'));
-    const y = target.offsetTop - 96;
     el.addEventListener('click', function(e) {
       e.preventDefault();
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      window.scrollTo({ top: target.offsetTop - 96, behavior: 'smooth' });
       links.classList.remove('is-visible');
     });
   });

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
           el.classList.add('is-active');
           elInView && elInView.classList.remove('is-active');
           elInView = el;
-          ga('send', 'event', 'scrollTo', 'section', el.id);
+          ga('send', 'event', 'scrollTo', 'section', el.getAttribute('id'));
         }
         return;
       }

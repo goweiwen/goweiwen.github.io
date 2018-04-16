@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.hamburger').addEventListener('click', e => {
     e.preventDefault();
     links.classList.toggle('is-visible');
+    ga('send', 'event', 'click', 'hamburger');
   });
 
   // Links
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       window.scrollTo({ top: target.offsetTop - 96, behavior: 'smooth' });
       links.classList.remove('is-visible');
+      ga('send', 'event', 'click', 'navigate', el.getAttribute('href'));
     });
   });
 
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ) {
         nodeList = document.querySelectorAll('main > .is-hidden');
         el.classList.remove('is-hidden');
+        ga('send', 'event', 'scrollTo', 'section', el.id);
       }
     });
     if (nodeList.length === 0) {

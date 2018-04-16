@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.hamburger').addEventListener('click', e => {
     e.preventDefault();
     links.classList.toggle('is-visible');
-    ga('send', 'event', 'click', 'hamburger');
+    ga('send', 'event', 'cv', 'hamburger');
   });
 
   // Links
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       window.scrollTo({ top: target.offsetTop - 96, behavior: 'smooth' });
       links.classList.remove('is-visible');
-      ga('send', 'event', 'click', 'navigate', target.id);
+      ga('send', 'event', 'cv', 'navigate', target.id);
     });
   });
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
           el.classList.add('is-active');
           elInView && elInView.classList.remove('is-active');
           elInView = el;
-          ga('send', 'event', 'scrollTo', 'section', target.id);
+          ga('send', 'event', 'cv', 'scroll', target.id);
         }
         return;
       }

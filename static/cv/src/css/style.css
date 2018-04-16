@@ -532,3 +532,14 @@ main > :not(.is-hidden) {
     display: none;
   }
 }
+@media print {
+  .outro.is-hidden,
+  .contact.is-hidden,
+  main > .is-hidden {
+    opacity: 1;
+    transform: none;
+  }
+  body {
+    font-size: 10pt;
+  }
+}

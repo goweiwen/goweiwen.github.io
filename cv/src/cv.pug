@@ -42,13 +42,28 @@ html
       .projects li { margin-left: 40px; }
 
       /* Languages, Interests */
-      .languages ul, .interests ul { margin: 8px 0; list-style: none; }
-      .languages ul li, .interests ul li { margin: 0; }
+      .columns {
+        display: flex;
+        flex-flow: row wrap;
+      }
+      .columns ul {
+        margin: 1em auto 1em 0;
+        min-width: 160px;
+      }
+      .columns {
+        margin-top: 0.2em;
+      }
+      .columns ul {
+        margin: 0;
+      }
+      .columns ul li {
+        display: inline;
+      }
 
       .print-only { display: none; }
 
       @media print {
-        body { font-size: 10.5pt; }
+        body { font-size: 10pt; }
         body, a { color: #606264; }
         main { padding: 0; max-width: 720px; }
         header, section { max-width: 720px; }
@@ -112,36 +127,8 @@ html
           //-       path(fill="#606264" d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z")
           //-     | Singapore
 
-      section.education
-        h2 Education
-        ul
-          li
-            header
-              strong.company National University of Singapore 
-              span.date Aug 2016 - Present
-            ul.description
-              li Bachelor of Computing in Computer Science. GPA: 4.70/5.00 (First Class Honours)
-              li Tutor for CS2103 Software Engineering (Spring 2018)
-              li.no-print Advisor for NUS Orbital 2018
-              li.no-print Notable modules:
-                ul
-                  li CS3216 Software Product Engineering for Digital Markets
-                  li CS3230 Design and Analysis of Algorithms
-                  li CS3243 Introduction to Artificial Intelligence
-                  li CS3244 Machine Learning
-                  li CS3234 Logic and Formal Systems
-              //- li Advisor for NUS Orbital 2018
-
-          li
-            header
-              strong.company Singapore Polytechnic 
-              span.date Apr 2011 - Apr 2014
-            ul.description
-              li Diploma in Chemical Engineering. GPA: 3.67/4.00
-              li Diploma-Plus Certificate in Engineering Mathematics and Science
-
       section.experience
-        h2 Professional Experience
+        h2 Experience
         ul
           //- li
           //-   header
@@ -150,6 +137,15 @@ html
           //-     span.date May 2018 - Jul 2018
           //-   ul.description
           //-     li Garena Labs
+
+          li
+            header
+              strong.company National University of Singapore
+              em.title , Undergraduate Teaching Assistant 
+              span.date Jan 2017 - Present
+            ul.description
+              li Taught CS2103T Software Engineering (Spring 18)
+              li Reviewed pull requests from students to encourage good software engineering practices.
 
           li
             header
@@ -197,6 +193,32 @@ html
           //-     span.date Feb 2013 - Apr 2013
           //-   ul.description
           //-     li Managed the day to day operations of chemical plant over 12-hour shifts.
+
+      section.education
+        h2 Education
+        ul
+          li
+            header
+              strong.company National University of Singapore 
+              span.date Aug 2016 - Present
+            ul.description
+              li Bachelor of Computing in Computer Science. GPA: 4.70/5.00 (First Class Honours)
+              li.no-print Advisor for NUS Orbital 2018
+              li.no-print Notable modules:
+                ul
+                  li CS3216 Software Product Engineering for Digital Markets
+                  li CS3230 Design and Analysis of Algorithms
+                  li CS3243 Introduction to Artificial Intelligence
+                  li CS3244 Machine Learning
+                  li CS3234 Logic and Formal Systems
+
+          li.no-print
+            header
+              strong.company Singapore Polytechnic 
+              span.date Apr 2011 - Apr 2014
+            ul.description
+              li Diploma in Chemical Engineering. GPA: 3.67/4.00
+              li Diploma-Plus Certificate in Engineering Mathematics and Science
 
       section.projects
         h2 Projects
@@ -246,7 +268,7 @@ html
               li Source: #[a(href="https://github.com/goweiwen/ivle-sync") github.com/goweiwen/ivle-sync]
 
       section.awards
-        h2 Awards and Achievements
+        h2 Awards
         ul
           li
             header
@@ -281,11 +303,47 @@ html
             ul.description
               li Awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards work.
 
-      section.languages
-        h2 Preferred Technologies
-        ul
-          li #[strong Languages:] Python, JavaScript, HTML/CSS, Haskell, Golang, Kotlin, Swift, Rust, Scala, Java, PHP, SQL
-          li #[strong Technologies:] Vue.js, React.js, Angular, jQuery, Elm, Node.js, Django, Laravel, Keras, TensorFlow
+      section.skills#skills
+        h2 Skills
+        .columns
+          ul.languages
+            li #[strong Languages:]
+            li Python
+            li JavaScript
+            li HTML/CSS
+            li Haskell
+            li Golang
+            li Kotlin
+            li Scala
+            li Ruby
+            li Java
+            li PHP
+            li SQL
+          ul.frontend
+            li #[strong Front-end:]
+            li Vue.js
+            li React.js
+            li Elm
+            li Angular
+            li jQuery
+            li Vanilla JS
+          ul.backend
+            li #[strong Back-end:]
+            li Node.js
+            li Express/Koa
+            li Django
+            li Flask
+            li Golang
+            li Ruby on Rails
+            li Laravel
+            li PHP
+          ul.data
+            li #[strong Data Science:]
+            li NumPy
+            li Pandas
+            li R
+            li Keras
+            li TensorFlow
 
       //- section.interests
       //-   h2 Personal Interests

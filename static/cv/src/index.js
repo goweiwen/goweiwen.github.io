@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
       ) {
         if (el !== elInView) {
           el.classList.add('is-active');
-          console.log(el);
           elInView && elInView.classList.remove('is-active');
           elInView = el;
+          ga('send', 'event', 'scrollTo', 'section', el.id);
         }
         return;
       }
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
       ) {
         nodeList = document.querySelectorAll('main > .is-hidden');
         el.classList.remove('is-hidden');
-        ga('send', 'event', 'scrollTo', 'section', el.id);
       }
     });
     if (nodeList.length === 0) {

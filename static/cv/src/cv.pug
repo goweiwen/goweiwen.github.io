@@ -63,16 +63,14 @@ html
       .print-only { display: none; }
 
       @media print {
-        body { font-size: 10pt; }
+        body { font-size: 9.5pt; }
         body, a { color: #606264; }
         main { padding: 0; max-width: 720px; }
         header, section { max-width: 720px; }
         section { margin: 0.2em 0 0 0; }
         section header { margin: 0.3em 0 0 0; }
-        section ul.description { list-style: none; }
-        section ul.description li { margin: 0 0 0 0.5em ; }
         h1 { font-size: 1.5em; }
-        h2 { font-size: 1.1em; }
+        h2 { font-size: 1.0em; }
         .no-print { display: none; }
         .print-only { display: initial; }
       }
@@ -130,13 +128,26 @@ html
       section.experience
         h2 Experience
         ul
-          //- li
-          //-   header
-          //-     strong.company Sea Group
-          //-     em.title , Software Engineer Intern 
-          //-     span.date May 2018 - Jul 2018
-          //-   ul.description
-          //-     li Garena Labs
+          li
+            header
+              strong.company UpGuard
+              em.title , Site Reliability Engineer Intern
+              span.date Aug 2018 - Present
+            ul.description
+              li Design and deploy Docker containers for deployment on Kubernetes and Fleet.
+              li Orchestrate Docker containers on Google Kubernetes Engine and onsite Kubernetes clusters.
+              li Develop Helm Charts for easily configurable deployments.
+              li Write Golang programs and shell scripts to control Kubernetes pods.
+
+          li
+            header
+              strong.company Sea Group
+              em.title , Software Engineer Intern 
+              span.date May 2018 - Jul 2018
+            ul.description
+              li Developed iOS applications with Swift and Objective-C
+              li Increased App Store rating from 3.4 to 4.7 stars by asking users to rate the app after satisfactory interactions.
+              li Created a CocoaPod to easily create and show users guided tours using Swift, with Objective-C interop.
 
           li
             header
@@ -202,7 +213,7 @@ html
               strong.company National University of Singapore 
               span.date Aug 2016 - Present
             ul.description
-              li Bachelor of Computing in Computer Science. GPA: 4.70/5.00 (First Class Honours)
+              li Bachelor of Computing in Computer Science.
               li.no-print Advisor for NUS Orbital 2018
               li.no-print Notable modules:
                 ul
@@ -217,7 +228,7 @@ html
               strong.company Singapore Polytechnic 
               span.date Apr 2011 - Apr 2014
             ul.description
-              li Diploma in Chemical Engineering. GPA: 3.67/4.00
+              li Diploma in Chemical Engineering.
               li Diploma-Plus Certificate in Engineering Mathematics and Science
 
       section.projects
@@ -303,47 +314,47 @@ html
             ul.description
               li Awarded by the Defence Management Group to individuals who have displayed exemplary attitude towards work.
 
-      section.skills#skills
-        h2 Skills
-        .columns
-          ul.languages
-            li #[strong Languages:]
-            li Python
-            li JavaScript
-            li HTML/CSS
-            li Haskell
-            li Golang
-            li Kotlin
-            li Scala
-            li Ruby
-            li Java
-            li PHP
-            li SQL
-          ul.frontend
-            li #[strong Front-end:]
-            li Vue.js
-            li React.js
-            li Elm
-            li Angular
-            li jQuery
-            li Vanilla JS
-          ul.backend
-            li #[strong Back-end:]
-            li Node.js
-            li Express/Koa
-            li Django
-            li Flask
-            li Golang
-            li Ruby on Rails
-            li Laravel
-            li PHP
-          ul.data
-            li #[strong Data Science:]
-            li NumPy
-            li Pandas
-            li R
-            li Keras
-            li TensorFlow
+      //- section.skills#skills
+      //-   h2 Skills
+      //-   .columns
+      //-     ul.languages
+      //-       li #[strong Languages:]
+      //-       li Python
+      //-       li JavaScript
+      //-       li HTML/CSS
+      //-       li Haskell
+      //-       li Golang
+      //-       li Kotlin
+      //-       li Scala
+      //-       li Ruby
+      //-       li Java
+      //-       li PHP
+      //-       li SQL
+      //-     ul.frontend
+      //-       li #[strong Front-end:]
+      //-       li Vue.js
+      //-       li React.js
+      //-       li Elm
+      //-       li Angular
+      //-       li jQuery
+      //-       li Vanilla JS
+      //-     ul.backend
+      //-       li #[strong Back-end:]
+      //-       li Node.js
+      //-       li Express/Koa
+      //-       li Django
+      //-       li Flask
+      //-       li Golang
+      //-       li Ruby on Rails
+      //-       li Laravel
+      //-       li PHP
+      //-     ul.data
+      //-       li #[strong Data Science:]
+      //-       li NumPy
+      //-       li Pandas
+      //-       li R
+      //-       li Keras
+      //-       li TensorFlow
 
       //- section.interests
       //-   h2 Personal Interests
